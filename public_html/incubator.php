@@ -94,20 +94,31 @@ if(isset($_GET['light']) == false){
           <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
       </nav>
+
       <p></p>
 
       <div align="center" class="animated fadeIn delay-1s">
-        <img src="./images/weedplantincubator.png" align="center" width="80%" style="max-width:420px">
+        <div><font size="5" color="#000">
+          <img src="./images/calendaricon.png" align="center" width="25%" style="max-width:60px;margin-right:-43px;"><a id="dayDisplay">21</a>
+          <img src="./images/humidityleaf.png" align="center" width="25%" style="max-width:50px;margin-left:43px;margin-right:5px"><a id="waterLevelDisplay">14%</a>
+          <img src="./images/growlighton.png" align="center" width="25%" style="max-width:80px;margin-left:5px;margin-right:5px;"><a id="lightDisplay">ON</a>
+        </font></div>
       </div>
 
       <p></p>
 
       <div align="center" class="animated fadeIn delay-1s">
-        <div>
-          <img src="./images/tempicon.png" align="center" width="25%" style="max-width:60px"><a id="tempDisplay">74</a>
+        <img src="./images/purpleincubator.png" align="center" width="60%" style="max-width:300px;">
+      </div>
+
+      <p></p>
+
+      <div align="center" class="animated fadeIn delay-1s">
+        <div><font size="5" color="#000">
+          <img src="./images/tempicon2.png" align="center" width="15%" style="max-width:44px"><a id="tempDisplay">74</a><a id="degree">°</a>
           <img src="./images/waterpumpicon.png" align="center" width="25%" style="max-width:60px"><a id="waterLevelDisplay">20%</a>
-          <img src="./images/growlighton.png" align="center" width="25%" style="max-width:60px"><a id="lightDisplay">ON</a>
-        </div>
+          <img src="./images/ph-icon-6.png" align="center" width="25%" style="max-width:60px"><a id="phLevelDisplay">6.5</a><a id="pHdlol">pH</a>
+        </font></div>
       </div>
 
       <p></p>
@@ -116,7 +127,7 @@ if(isset($_GET['light']) == false){
         <button onclick="" style="width: 304px;height: 54px">Live Camera Feed <img src="images/livecameraicon.png" width="18px"></button>
       </div>
 
-      <p></p>
+      <!-- <p></p>
       <div align="center" id="statHolder" class="">?</div>
       <p></p>
 
@@ -132,7 +143,7 @@ if(isset($_GET['light']) == false){
         <form method="post" action="javascript:callMiniLightOff()">
           <button type="submit" onclick="" style="width: 304px;height: 54px" value="miniLightOFF">Mini Light OFF <img src="images/minilighticon.png" width="18px"></button>
         </form>
-      </div>
+      </div> -->
 
       <p></p>
       <p align="center" class="animated fadeIn delay-1s">Developed by Bart Tarasewicz</p>
