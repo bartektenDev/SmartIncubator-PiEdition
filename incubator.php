@@ -103,6 +103,16 @@ if(isset($_GET['light']) == false){
       <p></p>
 
       <div align="center" class="animated fadeIn delay-1s">
+        <div>
+          <img src="./images/tempicon.png" align="center" width="25%" style="max-width:60px"><a id="tempDisplay">74</a>
+          <img src="./images/waterpumpicon.png" align="center" width="25%" style="max-width:60px"><a id="waterLevelDisplay">20%</a>
+          <img src="./images/growlighton.png" align="center" width="25%" style="max-width:60px"><a id="lightDisplay">ON</a>
+        </div>
+      </div>
+
+      <p></p>
+
+      <div align="center" class="animated fadeIn delay-1s">
         <button onclick="" style="width: 304px;height: 54px">Live Camera Feed <img src="images/livecameraicon.png" width="18px"></button>
       </div>
 
