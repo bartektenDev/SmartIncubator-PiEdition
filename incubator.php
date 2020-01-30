@@ -77,7 +77,7 @@ if(isset($_GET['light']) == false){
 
       <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     </head>
-    <body style>
+    <body onload="openWebcamLiveStream();" style>
       <nav class="light-blue lighten-1" role="navigation">
         <div class="nav-wrapper container"><a id="logo-container" href="incubator.php" class="brand-logo">EarthBOX</a>
           <ul class="right hide-on-med-and-down">
@@ -94,29 +94,80 @@ if(isset($_GET['light']) == false){
           <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
       </nav>
+
       <p></p>
 
       <div align="center" class="animated fadeIn delay-1s">
-        <img src="./images/weedplantincubator.png" align="center" width="80%" style="max-width:420px">
+        <div><font size="5" color="#000">
+          <img src="./images/blankios6calendar.png" align="center" width="25%" style="max-width:60px;margin-right:-43px;"><a id="dayDisplay">25</a>
+          <img src="./images/waterpumpicon.png" align="center" width="25%" style="max-width:60px;margin-left:43px;margin-right:5px"><a id="waterLevelDisplay">14%</a>
+          <img src="./images/fanon.gif" align="center" width="25%" style="max-width:60px;"><a id="waterLevelDisplay">ON</a>
+          <img src="./images/growlighton.png" align="center" width="25%" style="max-width:80px;margin-left:5px;margin-right:5px;"><a id="lightDisplay">ON</a>
+        </font></div>
       </div>
 
       <p></p>
 
       <div align="center" class="animated fadeIn delay-1s">
-        <div>
-          <img src="./images/tempicon.png" align="center" width="25%" style="max-width:60px"><a id="tempDisplay">74</a>
-          <img src="./images/waterpumpicon.png" align="center" width="25%" style="max-width:60px"><a id="waterLevelDisplay">20%</a>
-          <img src="./images/growlighton.png" align="center" width="25%" style="max-width:60px"><a id="lightDisplay">ON</a>
-        </div>
+        <img src="./images/weedplantincubator.png" align="center" width="30%" style="max-width:180px;max-height:180px;">
+        <img id="webcamLiveStreamDisplay" align="center" style="-webkit-user-select: none;" src="" width="280" height="160">
       </div>
 
       <p></p>
 
       <div align="center" class="animated fadeIn delay-1s">
-        <button onclick="" style="width: 304px;height: 54px">Live Camera Feed <img src="images/livecameraicon.png" width="18px"></button>
+        <div><font size="4" color="#000">
+          <img src="./images/tempicon2.png" align="center" width="15%" style="max-width:44px">
+          <a id="tempDisplay">
+            <?php
+              $file = fopen("./python_scripts/logs/currentTemp.txt","r");
+              echo fgets($file);
+              fclose($file);
+            ?>
+          </a><a id="degree">°</a>
+          <img src="./images/humidityred.png" align="center" width="30%" style="max-width:60px">
+          <a id="humidityDisplay">
+            <?php
+              $file = fopen("./python_scripts/logs/currentHumidity.txt","r");
+              echo fgets($file);
+              fclose($file);
+            ?>
+          </a><a id="percent">%</a>
+          <img src="./images/ph-icon-6.png" align="center" width="25%" style="max-width:60px">
+          <a id="phLevelDisplay">
+            <?php
+              $file = fopen("./python_scripts/logs/currentPh.txt","r");
+              echo fgets($file);
+              fclose($file);
+            ?>
+        </a><a id="pHdlol">pH</a>
+        </font></div>
+      </div>
+
+      <div align="center" class="animated fadeIn delay-1s">
+        <div><font size="3" color="#000">
+          <img src="./images/soiltemp.png" align="center" width="30%" style="max-width:70px">
+          <a id="soilTempDisplay">
+            <?php
+              $file = fopen("./python_scripts/logs/currentSoilTemp.txt","r");
+              echo fgets($file);
+              fclose($file);
+            ?>
+          </a><a id="percent">%</a>
+          <img src="./images/soilmeter.png" id="moistMeterIMG" align="center" width="50%" style="max-width:110px">
+          <a id="soilMoistureDisplay">
+            <?php
+              $file = fopen("./python_scripts/logs/currentSoilMoisture.txt","r");
+              echo fgets($file);
+              fclose($file);
+            ?>/1000
+        </a>
+        </font></div>
       </div>
 
       <p></p>
+
+      <!-- <p></p>
       <div align="center" id="statHolder" class="">?</div>
       <p></p>
 
@@ -132,17 +183,16 @@ if(isset($_GET['light']) == false){
         <form method="post" action="javascript:callMiniLightOff()">
           <button type="submit" onclick="" style="width: 304px;height: 54px" value="miniLightOFF">Mini Light OFF <img src="images/minilighticon.png" width="18px"></button>
         </form>
-      </div>
+      </div> -->
 
       <p></p>
       <p align="center" class="animated fadeIn delay-1s">Developed by Bart Tarasewicz</p>
 
       <p></p>
-      <p align="center" class="animated fadeIn delay-1s">The best smart planetary incubator,<br> engineered with fine Polish programming.</p>
+      <p align="center" class="animated fadeIn delay-1s">The best smart plantary incubator,<br> engineered with fine Polish programming.</p>
 
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script type="text/javascript" src="js/javascript_mail.js"></script>
 
       <script type="text/javascript">
 
@@ -150,22 +200,22 @@ if(isset($_GET['light']) == false){
       $('#statHolder').attr('class', '');
       switch(theMiniLight)
       {
-      	case 'on' :
-      		$('#statHolder').addClass('miniLightON')
-      	break;
+        case 'on' :
+            $('#statHolder').addClass('miniLightON')
+        break;
 
-      	case 'off' :
-      		$('#statHolder').addClass('miniLightOFF')
-      	break;
+        case 'off' :
+            $('#statHolder').addClass('miniLightOFF')
+        break;
       }
 
       function callMiniLightOn()
       {
-      	$.ajax({
-      		url: 'mini_light_on.php',
-      		success: loadDataSuccess,
-      		error : loadError
-      	});
+        $.ajax({
+            url: 'mini_light_on.php',
+            success: loadDataSuccess,
+            error : loadError
+        });
       }
 
       function callMiniLightOff()
@@ -179,27 +229,29 @@ if(isset($_GET['light']) == false){
 
       function loadError(jqXHR, textStatus, errorThrown)
       {
-      	loadDataError(errorThrown);
+        loadDataError(errorThrown);
       }
 
       function loadDataError(error)
       {
-      	console.log('Load Error : ' + error);
+        console.log('Load Error : ' + error);
       }
 
       function loadDataSuccess(data)
       {
-      	// Confirm the door was closed
-      	//alert(data);
+        // Confirm the door was closed
+        //alert(data);
 
-      	// Refresh the page (clears headers)
-      	//location.reload();
-      	location.href = '?light='+data;
+        // Refresh the page (clears headers)
+        //location.reload();
+        location.href = '?light='+data;
       }
       </script>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <script type="text/javascript" src="js/javascript_bater.js"></script>
       <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
