@@ -27,6 +27,9 @@ function openWebcamLiveStream()
 
   //readMoistMeter
   readMoistMeter();
+
+  //display livestream and if not found notify user!
+  checkSRC();
 }
 
 function getPublicIP()
@@ -95,6 +98,14 @@ function readMoistMeter()
       img.src = "./images/drymeter5.png";
     }
   }
+}
 
+function checkSRC()
+{
+  var elem = document.getElementById('webcamLiveStreamDisplay');
 
+  if(elem.getAttribute('src') == "http://127.0.0.1:8082")
+  {
+    elem.src = "./images/livestreamnotfound.jpg";
+  }
 }

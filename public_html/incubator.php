@@ -102,15 +102,20 @@ if(isset($_GET['light']) == false){
           <img src="./images/blankios6calendar.png" align="center" width="30%" style="max-width:60px;"><a style="margin-left:-42px;" id="dayDisplay">25</a>
           <img src="./images/minilightbulb.png" align="center" width="30%" style="max-width:60px;margin-left:20px;"><a>OFF</a>
           <img src="./images/fanon.gif" align="center" width="30%" style="max-width:60px;"><a id="waterLevelDisplay">ON</a>
-          <img src="./images/growlighton.png" align="center" width="30%" style="max-width:80px;"><a style="margin-left:10px;" id="lightDisplay">ON</a>
+          <img src="./images/growlighton.png" align="center" width="30%" style="max-width:80px;"><a style="margin-left:5px;" id="lightDisplay">ON</a>
         </font></div>
       </div>
 
       <p></p>
 
       <div align="center" class="animated fadeIn delay-1s">
-        <img src="./images/weedplantincubator.png" align="center" width="30%" style="max-width:150px;max-height:150px;">
-        <img id="webcamLiveStreamDisplay" align="center" style="-webkit-user-select: none;" src="" width="280" height="160">
+        <img id="webcamLiveStreamDisplay" align="center" style="-webkit-user-select: none;" src="" width="95%">
+      </div>
+
+      <p></p>
+
+      <div align="center" class="animated fadeIn delay-1s">
+        <img src="./images/weedplantincubator.png" align="center" height="25%" style="max-height:200px;">
       </div>
 
       <p></p>
