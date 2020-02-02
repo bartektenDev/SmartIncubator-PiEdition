@@ -18,6 +18,7 @@ if(isset($_GET['light']) == false){
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <link rel="stylesheet" href="./css/animate.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css"/>
 <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -56,11 +57,11 @@ if(isset($_GET['light']) == false){
 
     if (isset($_POST['miniLightON']))
     {
-    exec("sudo python /home/pi/mini_light_on.py");
+    exec("sudo python /home/pi/incubator/python_scripts/mini_light_on.py");
     }
     if (isset($_POST['miniLightOFF']))
     {
-    exec("sudo python /home/pi/mini_light_off.py");
+    exec("sudo python /home/pi/incubator/python_scripts/mini_light_off.py");
     }
 
     unset($_POST);
@@ -78,8 +79,8 @@ if(isset($_GET['light']) == false){
       <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     </head>
     <body onload="openWebcamLiveStream();" style>
-      <nav class="light-blue lighten-1" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="incubator.php" class="brand-logo">EarthBOX</a>
+      <nav class="green lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a size="3">ver. 1.0.6&nbsp;</a><a id="logo-container" href="incubator.php" class="brand-logo">🌎 EarthBOX</a>
           <ul class="right hide-on-med-and-down">
             <li><a href="incubator.php">Incubator</a></li>
           </ul>
@@ -97,80 +98,124 @@ if(isset($_GET['light']) == false){
 
       <p></p>
 
+      <div align="center">
+        <font size="3" color="#000" style="margin-left:-200px;">
+        Been Incubating for
+        </font>
+      </div>
+
+      <p></p>
+
       <div align="center" class="animated fadeIn delay-1s">
-        <div><font size="5" color="#000">
-          <img src="./images/blankios6calendar.png" align="center" width="30%" style="max-width:60px;"><a style="margin-left:-42px;" id="dayDisplay">25</a>
+        <div>
+          <img src="./images/blankios6calendar.png" align="center" width="30%" style="max-width:60px;"><a style="margin-left:-44px;color:#000;font-size:24px;" id="dayZDisplay"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:#000;font-size:24px;">Days</a>&nbsp;
+          <a id="startdate" style="text-align:left;color:#000;">
+            <?php
+              $file = fopen("./python_scripts/logs/startDateIncubation.txt","r");
+              echo fgets($file);
+              fclose($file);
+            ?>
+          </a>
+          <a id="enddate" style="text-align:left;color:#000;">
+            <?php
+            $date = date('m/d/yy');
+            echo $date;
+            ?>
+          </a>
+
+          <p></p>
+
+          <font size="3" color="#000">
+          <a style="margin-left:140px;">Start Date</a>
+          <a style="margin-left:20px;">Today's Date</a>
+          </font><p></p>
+          <font size="5" color="#000">
           <img src="./images/minilightbulb.png" align="center" width="30%" style="max-width:60px;margin-left:20px;"><a>OFF</a>
           <img src="./images/fanon.gif" align="center" width="30%" style="max-width:60px;"><a id="waterLevelDisplay">ON</a>
           <img src="./images/growlighton.png" align="center" width="30%" style="max-width:80px;"><a style="margin-left:5px;" id="lightDisplay">ON</a>
         </font></div>
       </div>
 
-      <p></p>
-
-      <div align="center" class="animated fadeIn delay-1s">
-        <img id="webcamLiveStreamDisplay" align="center" style="-webkit-user-select: none;" src="" width="95%">
+      <div class="row">
+        <div class="col s12 m7" style="max-width:420px;">
+          <div class="card">
+            <div class="card-image">
+              <img id="webcamLiveStreamDisplay" align="center" style="-webkit-user-select: none;" src="" width="95%">
+              <span class="card-title">🔴 LiveStream</span>
+            </div>
+            <div class="card-action">
+              <a href="#">Fullscreen</a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <p></p>
 
-      <div align="center" class="animated fadeIn delay-1s">
-        <img src="./images/weedplantincubator.png" align="center" height="25%" style="max-height:200px;">
+      <div class="row">
+        <div class="col s12 m6" style="max-width:420px;">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Incubator Controls</span>
+              <div align="center"><font size="4" color="#000">
+                <img src="./images/weedplantincubator.png" align="center" height="25%" style="max-height:200px;">
+                <img src="./images/tempicon2.png" align="center" width="15%" style="max-width:44px">
+                <a id="tempDisplay" style="color:#000;">
+                  <?php
+                    $file = fopen("./python_scripts/logs/currentTemp.txt","r");
+                    echo fgets($file);
+                    fclose($file);
+                  ?>
+                </a><a id="degree" style="color:#000;">°</a>
+                <img src="./images/humidityred.png" align="center" width="30%" style="max-width:60px">
+                <a id="humidityDisplay" style="color:#000;">
+                  <?php
+                    $file = fopen("./python_scripts/logs/currentHumidity.txt","r");
+                    echo fgets($file);
+                    fclose($file);
+                  ?>
+                </a><a id="percent" style="color:#000;">%</a>
+                <!-- <img src="./images/ph-icon-6.png" align="center" width="25%" style="max-width:60px">
+                <a id="phLevelDisplay">
+                  <?php
+                    $file = fopen("./python_scripts/logs/currentPh.txt","r");
+                    echo fgets($file);
+                    fclose($file);
+                  ?>
+              </a><a id="pHdlol">pH</a> -->
+
+              <img src="./images/soiltemp.png" align="center" width="30%" style="max-width:70px;">
+              <a id="soilTempDisplay" style="color:#000;">
+                <?php
+                  $file = fopen("./python_scripts/logs/currentSoilTemp.txt","r");
+                  echo fgets($file);
+                  fclose($file);
+                ?>
+              </a><a id="percent" style="color:#000;">%</a>
+              <img src="./images/soilmeter.png" id="moistMeterIMG" align="center" width="50%" style="max-width:110px;">
+              <a id="soilMoistureDisplay" style="color:#000;">
+                <?php
+                  $file = fopen("./python_scripts/logs/currentSoilMoisture.txt","r");
+                  echo fgets($file);
+                  fclose($file);
+                ?>/1000
+            </a>
+              </font>
+            </div>
+            </div>
+            <div align="center" class="card-action">
+              <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/minilighticon5.png" width="100%" /><i class="material-icons">minilight</i></a>&nbsp;
+              <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/waterplanticon6.png" width="100%" /><i class="material-icons">waterplant</i></a>&nbsp;
+              <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/fanicon4.png" width="100%" /></a>&nbsp;
+              <a class="btn-floating btn-large waves-effect waves-light black"><img src="./images/reloadicon.png" width="100%"/><i class="material-icons">reload</i></a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <p></p>
-
       <div align="center" class="animated fadeIn delay-1s">
-        <div><font size="4" color="#000">
-          <img src="./images/tempicon2.png" align="center" width="15%" style="max-width:44px">
-          <a id="tempDisplay">
-            <?php
-              $file = fopen("./python_scripts/logs/currentTemp.txt","r");
-              echo fgets($file);
-              fclose($file);
-            ?>
-          </a><a id="degree">°</a>
-          <img src="./images/humidityred.png" align="center" width="30%" style="max-width:60px">
-          <a id="humidityDisplay">
-            <?php
-              $file = fopen("./python_scripts/logs/currentHumidity.txt","r");
-              echo fgets($file);
-              fclose($file);
-            ?>
-          </a><a id="percent">%</a>
-          <img src="./images/ph-icon-6.png" align="center" width="25%" style="max-width:60px">
-          <a id="phLevelDisplay">
-            <?php
-              $file = fopen("./python_scripts/logs/currentPh.txt","r");
-              echo fgets($file);
-              fclose($file);
-            ?>
-        </a><a id="pHdlol">pH</a>
-        </font></div>
-      </div>
 
-      <div align="center" class="animated fadeIn delay-1s">
-        <div><font size="3" color="#000">
-          <img src="./images/soiltemp.png" align="center" width="30%" style="max-width:70px">
-          <a id="soilTempDisplay">
-            <?php
-              $file = fopen("./python_scripts/logs/currentSoilTemp.txt","r");
-              echo fgets($file);
-              fclose($file);
-            ?>
-          </a><a id="percent">%</a>
-          <img src="./images/soilmeter.png" id="moistMeterIMG" align="center" width="50%" style="max-width:110px">
-          <a id="soilMoistureDisplay">
-            <?php
-              $file = fopen("./python_scripts/logs/currentSoilMoisture.txt","r");
-              echo fgets($file);
-              fclose($file);
-            ?>/1000
-        </a>
-        </font></div>
       </div>
-
-      <p></p>
 
       <!-- <p></p>
       <div align="center" id="statHolder" class="">?</div>
@@ -244,11 +289,6 @@ if(isset($_GET['light']) == false){
 
       function loadDataSuccess(data)
       {
-        // Confirm the door was closed
-        //alert(data);
-
-        // Refresh the page (clears headers)
-        //location.reload();
         location.href = '?light='+data;
       }
       </script>
@@ -257,11 +297,12 @@ if(isset($_GET['light']) == false){
       <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
     <script type="text/javascript" src="js/javascript_bater.js"></script>
-      <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="./js/materialize.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
       <script type="text/javascript" src="js/init.js"></script>
+      <script type="text/javascript" src="js/datepickerc.js"></script>
       <div class="sidenav-overlay"></div>
       <div class="drag-target"></div>
     </body>
