@@ -26,7 +26,7 @@ function openWebcamLiveStream()
   document.getElementById("webcamLiveStreamDisplay").src = "http://" + window.location.hostname + ":8082"
 
   //readMoistMeter
-  //readMoistMeter();
+  readMoistMeter();
 
   //display livestream and if not found notify user!
   checkSRC();

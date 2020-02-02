@@ -79,8 +79,8 @@ if(isset($_GET['light']) == false){
       <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     </head>
     <body onload="openWebcamLiveStream();" style>
-      <nav class="green lighten-1" role="navigation">
-        <div class="nav-wrapper container"><a size="3">ver. 1.0.6&nbsp;</a><a id="logo-container" href="incubator.php" class="brand-logo">🌎 EarthBOX</a>
+      <nav class="teal" role="navigation">
+        <div class="nav-wrapper container"><a size="3">ver. 1.0.7&nbsp;</a><a id="logo-container" href="incubator.php" class="brand-logo">🌎 EarthBOX</a>
           <ul class="right hide-on-med-and-down">
             <li><a href="incubator.php">Incubator</a></li>
           </ul>
@@ -96,55 +96,84 @@ if(isset($_GET['light']) == false){
         </div>
       </nav>
 
-      <p></p>
-
-      <div align="center">
-        <font size="3" color="#000" style="margin-left:-200px;">
-        Been Incubating for
-        </font>
-      </div>
-
-      <p></p>
-
-      <div align="center" class="animated fadeIn delay-1s">
-        <div>
-          <img src="./images/blankios6calendar.png" align="center" width="30%" style="max-width:60px;"><a style="margin-left:-44px;color:#000;font-size:24px;" id="dayZDisplay"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:#000;font-size:24px;">Days</a>&nbsp;
-          <a id="startdate" style="text-align:left;color:#000;">
-            <?php
-              $file = fopen("./python_scripts/logs/startDateIncubation.txt","r");
-              echo fgets($file);
-              fclose($file);
-            ?>
-          </a>
-          <a id="enddate" style="text-align:left;color:#000;">
-            <?php
-            $date = date('m/d/yy');
-            echo $date;
-            ?>
-          </a>
-
-          <p></p>
-
-          <font size="3" color="#000">
-          <a style="margin-left:140px;">Start Date</a>
-          <a style="margin-left:20px;">Today's Date</a>
-          </font><p></p>
-          <font size="5" color="#000">
-          <img src="./images/minilightbulb.png" align="center" width="30%" style="max-width:60px;margin-left:20px;"><a>OFF</a>
-          <img src="./images/fanon.gif" align="center" width="30%" style="max-width:60px;"><a id="waterLevelDisplay">ON</a>
-          <img src="./images/growlighton.png" align="center" width="30%" style="max-width:80px;"><a style="margin-left:5px;" id="lightDisplay">ON</a>
-        </font></div>
+      <div class="row">
+        <div align="center" style="margin:auto;max-width:420px;">
+          <div class="card">
+            <p></p>
+            <span class="card-title">Welcome! Let's get started</span>
+            <div class="card-image">
+              <img id="topImageDash" align="center" style="-webkit-user-select: none;" src="./images/growfactory.gif" width="15%">
+            </div>
+            <div class="card-action">
+              <a href="setup.html">Setup My EarthBOX</a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="row">
-        <div class="col s12 m7" style="max-width:420px;">
+        <div align="center" style="margin:auto;max-width:420px;">
           <div class="card">
-            <div class="card-image">
-              <img id="webcamLiveStreamDisplay" align="center" style="-webkit-user-select: none;" src="" width="95%">
-              <span class="card-title">🔴 LiveStream</span>
+            <div class="card-content black-text">
+            <span class="card-title">You have been incubating for...</span>
             </div>
+            <div>
+              <img src="./images/blankios6calendar.png" align="center" width="30%" style="max-width:60px;"><a style="margin-left:-44px;color:#000;font-size:24px;" id="dayZDisplay"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:#000;font-size:24px;">Days</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a id="startdate" style="text-align:left;color:#000;">
+                <?php
+                  $file = fopen("./python_scripts/logs/startDateIncubation.txt","r");
+                  echo fgets($file);
+                  fclose($file);
+                ?>
+              </a>
+              <a id="enddate" style="text-align:left;color:#000;">
+                <?php
+                $date = date('m/d/yy');
+                echo $date;
+                ?>
+              </a>
+
+              <p></p>
+
+              <font size="3" color="#000">
+              <a style="margin-left:140px;">Start Date</a>
+              <a style="margin-left:20px;">Today's Date</a>
+              </font><p></p>
+              <font size="3" color="#000">
+              <img src="./images/minilightbulb.png" align="center" width="30%" style="max-width:60px;"/>
+              <span>
+                <a>
+                  Off
+                </a>
+                /
+                <a>
+                  On
+                </a>
+              </span>
+              <img src="./images/fanon.gif" align="center" width="30%" style="max-width:60px;">
+              <span>
+                <a>
+                  Off
+                </a>
+                /
+                <a>
+                  On
+                </a>
+              </span>
+              <img src="./images/growlighton.png" align="center" width="30%" style="max-width:80px;"/>
+              <span>
+                <a>
+                  Off
+                </a>
+                /
+                <a>
+                  On
+                </a>
+              </span>
+            </font></div>
+            <p></p>
             <div class="card-action">
-              <a href="#">Fullscreen</a>
+              <a href="settings.html">Go to settings</a>
             </div>
           </div>
         </div>
@@ -153,28 +182,44 @@ if(isset($_GET['light']) == false){
       <p></p>
 
       <div class="row">
-        <div class="col s12 m6" style="max-width:420px;">
-          <div class="card blue-grey darken-1">
+        <div align="center" style="margin:auto;max-width:420px;">
+          <div class="card">
+            <div class="card-image">
+              <img id="webcamLiveStreamDisplay" align="center" style="-webkit-user-select: none;" src="" width="95%">
+              <span class="card-title"><img align="left" src="./images/reddot.gif" width="12px" style="max-width:12px;margin-top:13px;"/><font color="#fff">LiveStream</font></span>
+            </div>
+            <div class="card-action">
+              <a href="fullscreenStream.html">Fullscreen</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p></p>
+
+      <div class="row">
+        <div align="center" style="margin:auto;max-width:420px;">
+          <div class="card teal">
             <div class="card-content white-text">
               <span class="card-title">Incubator Controls</span>
               <div align="center"><font size="4" color="#000">
-                <img src="./images/weedplantincubator.png" align="center" height="25%" style="max-height:200px;">
+                <img src="./images/weedplantincubator.png" align="center" height="25%" style="max-height:200px;">&nbsp;&nbsp;
                 <img src="./images/tempicon2.png" align="center" width="15%" style="max-width:44px">
-                <a id="tempDisplay" style="color:#000;">
+                <a id="tempDisplay" style="color:#fff;">
                   <?php
                     $file = fopen("./python_scripts/logs/currentTemp.txt","r");
                     echo fgets($file);
                     fclose($file);
                   ?>
-                </a><a id="degree" style="color:#000;">°</a>
-                <img src="./images/humidityred.png" align="center" width="30%" style="max-width:60px">
-                <a id="humidityDisplay" style="color:#000;">
+                </a><a id="degree" style="color:#fff;">°</a>&nbsp;&nbsp;
+                <img src="./images/humidityredblackoutline.png" align="center" width="30%" style="max-width:60px">
+                <a id="humidityDisplay" style="color:#fff;">
                   <?php
                     $file = fopen("./python_scripts/logs/currentHumidity.txt","r");
                     echo fgets($file);
                     fclose($file);
                   ?>
-                </a><a id="percent" style="color:#000;">%</a>
+                </a><a id="percent" style="color:#fff;">%</a>
                 <!-- <img src="./images/ph-icon-6.png" align="center" width="25%" style="max-width:60px">
                 <a id="phLevelDisplay">
                   <?php
@@ -185,15 +230,15 @@ if(isset($_GET['light']) == false){
               </a><a id="pHdlol">pH</a> -->
 
               <img src="./images/soiltemp.png" align="center" width="30%" style="max-width:70px;">
-              <a id="soilTempDisplay" style="color:#000;">
+              <a id="soilTempDisplay" style="color:#fff;">
                 <?php
                   $file = fopen("./python_scripts/logs/currentSoilTemp.txt","r");
                   echo fgets($file);
                   fclose($file);
                 ?>
-              </a><a id="percent" style="color:#000;">%</a>
-              <img src="./images/soilmeter.png" id="moistMeterIMG" align="center" width="50%" style="max-width:110px;">
-              <a id="soilMoistureDisplay" style="color:#000;">
+              </a><a id="percent" style="color:#fff;">%</a>&nbsp;&nbsp;
+              <img src="./images/drymeter3.png" id="moistMeterIMG" align="center" width="50%" style="max-width:110px;">
+              <a id="soilMoistureDisplay" style="color:#fff;">
                 <?php
                   $file = fopen("./python_scripts/logs/currentSoilMoisture.txt","r");
                   echo fgets($file);
