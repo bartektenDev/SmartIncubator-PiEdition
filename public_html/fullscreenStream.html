@@ -10,9 +10,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 
-    <body style onload="readIP()">
-      <nav class="green lighten-1" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="incubator.php" class="brand-logo">Settings</a>
+    <body style onload="openWebcamLiveStream();">
+      <nav class="teal" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="incubator.php" class="brand-logo">LiveStream</a>
           <ul class="right hide-on-med-and-down">
             <li><a href="incubator.php">Incubator</a></li>
           </ul>
@@ -27,14 +27,15 @@
           <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
       </nav>
+
       <p></p>
 
-      <div align="center" class="animated fadeIn delay-1s">EarthBOX IP:<p id="incubatorBoxIPdisplay">x.x.x.x</p></div>
-
-      <div align="center" class="animated fadeIn delay-1s">This Device's Public IP:<p id="publicIPdisplay">IP NOT FOUND!</p></div>
-
-      <div align="center" class="animated fadeIn delay-1s">
-        ver 1.0.7
+      <div class="row">
+        <div align="center" style="max-width:100%">
+          <div class="card">
+            <img id="webcamLiveStreamDisplay" align="center" style="-webkit-user-select: none;" src="" width="100%">
+          </div>
+        </div>
       </div>
 
       <!--JavaScript at end of body for optimized loading-->

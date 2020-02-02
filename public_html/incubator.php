@@ -80,7 +80,7 @@ if(isset($_GET['light']) == false){
     </head>
     <body onload="openWebcamLiveStream();" style>
       <nav class="teal" role="navigation">
-        <div class="nav-wrapper container"><a size="3">ver. 1.0.7&nbsp;</a><a id="logo-container" href="incubator.php" class="brand-logo">🌎 EarthBOX</a>
+        <div class="nav-wrapper container"><a size="3">1.0.7&nbsp;</a><a id="logo-container" href="incubator.php" class="brand-logo">🌎 EarthBOX</a>
           <ul class="right hide-on-med-and-down">
             <li><a href="incubator.php">Incubator</a></li>
           </ul>
@@ -105,7 +105,7 @@ if(isset($_GET['light']) == false){
               <img id="topImageDash" align="center" style="-webkit-user-select: none;" src="./images/growfactory.gif" width="15%">
             </div>
             <div class="card-action">
-              <a href="setup.html">Setup My EarthBOX</a>
+              <a href="settings.html">Setup My EarthBOX</a>
             </div>
           </div>
         </div>
@@ -139,38 +139,7 @@ if(isset($_GET['light']) == false){
               <a style="margin-left:140px;">Start Date</a>
               <a style="margin-left:20px;">Today's Date</a>
               </font><p></p>
-              <font size="3" color="#000">
-              <img src="./images/minilightbulb.png" align="center" width="30%" style="max-width:60px;"/>
-              <span>
-                <a>
-                  Off
-                </a>
-                /
-                <a>
-                  On
-                </a>
-              </span>
-              <img src="./images/fanon.gif" align="center" width="30%" style="max-width:60px;">
-              <span>
-                <a>
-                  Off
-                </a>
-                /
-                <a>
-                  On
-                </a>
-              </span>
-              <img src="./images/growlighton.png" align="center" width="30%" style="max-width:80px;"/>
-              <span>
-                <a>
-                  Off
-                </a>
-                /
-                <a>
-                  On
-                </a>
-              </span>
-            </font></div>
+              </div>
             <p></p>
             <div class="card-action">
               <a href="settings.html">Go to settings</a>
@@ -199,27 +168,28 @@ if(isset($_GET['light']) == false){
 
       <div class="row">
         <div align="center" style="margin:auto;max-width:420px;">
-          <div class="card teal">
-            <div class="card-content white-text">
+          <div class="card white">
+            <div class="card-content black-text">
               <span class="card-title">Incubator Controls</span>
+              <p></p>
               <div align="center"><font size="4" color="#000">
                 <img src="./images/weedplantincubator.png" align="center" height="25%" style="max-height:200px;">&nbsp;&nbsp;
                 <img src="./images/tempicon2.png" align="center" width="15%" style="max-width:44px">
-                <a id="tempDisplay" style="color:#fff;">
+                <a id="tempDisplay" style="color:#000;">
                   <?php
                     $file = fopen("./python_scripts/logs/currentTemp.txt","r");
                     echo fgets($file);
                     fclose($file);
                   ?>
-                </a><a id="degree" style="color:#fff;">°</a>&nbsp;&nbsp;
+                </a><a id="degree" style="color:#000;">°</a>&nbsp;&nbsp;
                 <img src="./images/humidityredblackoutline.png" align="center" width="30%" style="max-width:60px">
-                <a id="humidityDisplay" style="color:#fff;">
+                <a id="humidityDisplay" style="color:#000;">
                   <?php
                     $file = fopen("./python_scripts/logs/currentHumidity.txt","r");
                     echo fgets($file);
                     fclose($file);
                   ?>
-                </a><a id="percent" style="color:#fff;">%</a>
+                </a><a id="percent" style="color:#000;">%</a>
                 <!-- <img src="./images/ph-icon-6.png" align="center" width="25%" style="max-width:60px">
                 <a id="phLevelDisplay">
                   <?php
@@ -230,15 +200,15 @@ if(isset($_GET['light']) == false){
               </a><a id="pHdlol">pH</a> -->
 
               <img src="./images/soiltemp.png" align="center" width="30%" style="max-width:70px;">
-              <a id="soilTempDisplay" style="color:#fff;">
+              <a id="soilTempDisplay" style="color:#000;">
                 <?php
                   $file = fopen("./python_scripts/logs/currentSoilTemp.txt","r");
                   echo fgets($file);
                   fclose($file);
                 ?>
-              </a><a id="percent" style="color:#fff;">%</a>&nbsp;&nbsp;
+              </a><a id="percent" style="color:#000;">%</a>&nbsp;&nbsp;
               <img src="./images/drymeter3.png" id="moistMeterIMG" align="center" width="50%" style="max-width:110px;">
-              <a id="soilMoistureDisplay" style="color:#fff;">
+              <a id="soilMoistureDisplay" style="color:#000;">
                 <?php
                   $file = fopen("./python_scripts/logs/currentSoilMoisture.txt","r");
                   echo fgets($file);
@@ -246,20 +216,51 @@ if(isset($_GET['light']) == false){
                 ?>/1000
             </a>
               </font>
+
+            <p></p>
+            <font size="3" color="#000">
+            <img src="./images/minilightbulb.png" align="center" width="30%" style="max-width:60px;"/>
+            <span>
+              <a style="color:#000;">
+                Off
+              </a>
+              /
+              <a style="color:#000;">
+                On
+              </a>
+            </span>
+            <img src="./images/fanon.gif" align="center" width="30%" style="max-width:50px;">
+            <span>
+              <a style="color:#000;">
+                Off
+              </a>
+              /
+              <a style="color:#000;">
+                On
+              </a>
+            </span>
+            <img src="./images/growlighton.png" align="center" width="30%" style="max-width:60px;"/>
+            <span>
+              <a style="color:#000;">
+                Off
+              </a>
+              /
+              <a style="color:#000;">
+                On
+              </a>
+            </span>
+            </font>
             </div>
             </div>
             <div align="center" class="card-action">
               <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/minilighticon5.png" width="100%" /><i class="material-icons">minilight</i></a>&nbsp;
-              <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/waterplanticon6.png" width="100%" /><i class="material-icons">waterplant</i></a>&nbsp;
               <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/fanicon4.png" width="100%" /></a>&nbsp;
+              <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/growlighton.png" width="100%" style="vertical-align: middle;position: absolute;top: 0;bottom: 0;margin: auto;"  /><i class="material-icons">growlight</i></a>&nbsp;
+              <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/waterplanticon6.png" width="100%" /><i class="material-icons">waterplant</i></a>&nbsp;
               <a class="btn-floating btn-large waves-effect waves-light black"><img src="./images/reloadicon.png" width="100%"/><i class="material-icons">reload</i></a>
             </div>
           </div>
         </div>
-      </div>
-
-      <div align="center" class="animated fadeIn delay-1s">
-
       </div>
 
       <!-- <p></p>
