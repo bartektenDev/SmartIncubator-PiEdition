@@ -1,14 +1,16 @@
 <?php
 
+$outputFileData = "";
+
 // // Define your username and password
-// $username = "bart";
-// $password = "password";
+$username = "bart";
+$password = "password";
 //
 //
-// if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
-if(isset($_GET['light']) == false){
-  header("Location: index.php");
-}
+if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
+  if(isset($_GET['light']) == false){
+    header("Location: index.php");
+  }
 ?>
 
   <html>
@@ -23,7 +25,7 @@ if(isset($_GET['light']) == false){
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 
-    <!--
+
 
     <font size="4">
     <h1 style="margin-left:60px;">Login</h1>
@@ -49,7 +51,7 @@ if(isset($_GET['light']) == false){
     </form>
     </font>
 
-    <p> -->
+    <p>
 
     <?php
     $which_light = $_GET['light'];
@@ -57,11 +59,11 @@ if(isset($_GET['light']) == false){
 
     if (isset($_POST['miniLightON']))
     {
-    exec("sudo python /home/pi/incubator/python_scripts/mini_light_on.py");
+    exec("sudo python var/www/html/python_scripts/miniLightOn.py");
     }
     if (isset($_POST['miniLightOFF']))
     {
-    exec("sudo python /home/pi/incubator/python_scripts/mini_light_off.py");
+    exec("sudo python /var/www/html/python_scripts/miniLightOff.py");
     }
 
     unset($_POST);
@@ -69,11 +71,25 @@ if(isset($_GET['light']) == false){
     //echo "<strong>Right = ".isset($_POST['RightOPEN'])."</strong><br /><strong>Left = ".isset($_POST['LeftOPEN'])."</strong>";
     ?>
 
+<p></p>
+
+  <?php
+}else{
+?>
+
     <!doctype html>
     <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <link href="css/style.css" rel="stylesheet" type="text/css">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link rel="stylesheet" href="./css/animate.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css"/>
+<!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title></title>
 
       <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -96,6 +112,32 @@ if(isset($_GET['light']) == false){
         </div>
       </nav>
 
+<<<<<<< HEAD
+      <?php
+        $file = fopen("./python_scripts/logs/dismissAlertStatus.txt","r");
+
+        $outputFileData = fgets($file);
+        fclose($file);
+        if($outputFileData == "youreExcusedKat"){
+
+?>
+
+<?php
+
+        }else{
+
+?>
+
+<div class="row">
+  <div align="center" style="margin:auto;max-width:420px;">
+    <div class="card">
+      <p></p>
+      <button onclick="dismissAlert();" id="topImageDash" align="right" style="-webkit-user-select: none;margin:auto;margin-right:8px;margin-top:8px;">Close</button>
+      <p></p>
+      <span class="card-title">Welcome! Let's get started</span>
+      <div class="card-image">
+        <img id="topImageDash" align="center" style="-webkit-user-select: none;" src="./images/growfactory.gif" width="15%"/>
+=======
       <div class="row">
         <div align="center" style="margin:auto;max-width:420px;">
           <div class="card">
@@ -109,7 +151,19 @@ if(isset($_GET['light']) == false){
             </div>
           </div>
         </div>
+>>>>>>> 12c97d1571bfe01b715464e517499e16869b197a
       </div>
+      <div class="card-action">
+        <a href="settings.html">Setup My EarthBOX</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<?php
+
+        }
+      ?>
 
       <div class="row">
         <div align="center" style="margin:auto;max-width:420px;">
@@ -118,7 +172,7 @@ if(isset($_GET['light']) == false){
             <span class="card-title">You have been incubating for...</span>
             </div>
             <div>
-              <img src="./images/blankios6calendar.png" align="center" width="30%" style="max-width:60px;"><a style="margin-left:-44px;color:#000;font-size:24px;" id="dayZDisplay"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:#000;font-size:24px;">Days</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <img src="./images/blankios6calendar.png" align="center" width="30%" style="max-width:60px;"><a style="margin-left:-44px;color:#000;font-size:24px;" id="dayZDisplay"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:#000;font-size:24px;">Days</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <a id="startdate" style="text-align:left;color:#000;">
                 <?php
                   $file = fopen("./python_scripts/logs/startDateIncubation.txt","r");
@@ -154,7 +208,7 @@ if(isset($_GET['light']) == false){
         <div align="center" style="margin:auto;max-width:420px;">
           <div class="card">
             <div class="card-image">
-              <img id="webcamLiveStreamDisplay" align="center" style="-webkit-user-select: none;" src="" width="95%">
+              <img id="webcamLiveStreamDisplay" align="center" style="-webkit-user-select: none;" src="" width="95%"/>
               <span class="card-title"><img align="left" src="./images/reddot.gif" width="12px" style="max-width:12px;margin-top:13px;"/><font color="#fff">LiveStream</font></span>
             </div>
             <div class="card-action">
@@ -173,8 +227,13 @@ if(isset($_GET['light']) == false){
               <span class="card-title">Incubator Controls</span>
               <p></p>
               <div align="center"><font size="4" color="#000">
+<<<<<<< HEAD
+                <img src="./images/360plant.gif" align="center" height="25%" style="max-height:190px;"/>&nbsp;&nbsp;
+                <img src="./images/tempicon2.png" align="center" width="15%" style="max-width:60px">
+=======
                 <img src="./images/weedplantincubator.png" align="center" height="25%" style="max-height:200px;">&nbsp;&nbsp;
                 <img src="./images/tempicon2.png" align="center" width="15%" style="max-width:44px">
+>>>>>>> 12c97d1571bfe01b715464e517499e16869b197a
                 <a id="tempDisplay" style="color:#000;">
                   <?php
                     $file = fopen("./python_scripts/logs/currentTemp.txt","r");
@@ -182,7 +241,11 @@ if(isset($_GET['light']) == false){
                     fclose($file);
                   ?>
                 </a><a id="degree" style="color:#000;">°</a>&nbsp;&nbsp;
+<<<<<<< HEAD
+                <img src="./images/humidityredblackoutline.png" align="center" width="30%" style="max-width:60px"/>
+=======
                 <img src="./images/humidityredblackoutline.png" align="center" width="30%" style="max-width:60px">
+>>>>>>> 12c97d1571bfe01b715464e517499e16869b197a
                 <a id="humidityDisplay" style="color:#000;">
                   <?php
                     $file = fopen("./python_scripts/logs/currentHumidity.txt","r");
@@ -199,7 +262,11 @@ if(isset($_GET['light']) == false){
                   ?>
               </a><a id="pHdlol">pH</a> -->
 
+<<<<<<< HEAD
+              <img src="./images/soiltemp.png" align="center" width="30%" style="max-width:70px;"/>
+=======
               <img src="./images/soiltemp.png" align="center" width="30%" style="max-width:70px;">
+>>>>>>> 12c97d1571bfe01b715464e517499e16869b197a
               <a id="soilTempDisplay" style="color:#000;">
                 <?php
                   $file = fopen("./python_scripts/logs/currentSoilTemp.txt","r");
@@ -207,7 +274,11 @@ if(isset($_GET['light']) == false){
                   fclose($file);
                 ?>
               </a><a id="percent" style="color:#000;">%</a>&nbsp;&nbsp;
+<<<<<<< HEAD
+              <img src="./images/drymeter3.png" id="moistMeterIMG" align="center" width="50%" style="max-width:110px;"/>
+=======
               <img src="./images/drymeter3.png" id="moistMeterIMG" align="center" width="50%" style="max-width:110px;">
+>>>>>>> 12c97d1571bfe01b715464e517499e16869b197a
               <a id="soilMoistureDisplay" style="color:#000;">
                 <?php
                   $file = fopen("./python_scripts/logs/currentSoilMoisture.txt","r");
@@ -221,6 +292,24 @@ if(isset($_GET['light']) == false){
             <font size="3" color="#000">
             <img src="./images/minilightbulb.png" align="center" width="30%" style="max-width:60px;"/>
             <span>
+<<<<<<< HEAD
+              <?php
+                $file = fopen("./python_scripts/logs/miniLightStatus.txt","r");
+                echo fgets($file);
+                fclose($file);
+              ?>
+            </span>
+            <img src="./images/fanoff.png" align="center" width="30%" style="max-width:50px;"/>
+            <span id="fanStatusText">
+              <?php
+                $file = fopen("./python_scripts/logs/fanStatus.txt","r");
+                echo fgets($file);
+                fclose($file);
+              ?>
+            </span>
+
+            <!-- <img src="./images/growlighton.png" align="center" width="30%" style="max-width:60px;"/>
+=======
               <a style="color:#000;">
                 Off
               </a>
@@ -240,6 +329,7 @@ if(isset($_GET['light']) == false){
               </a>
             </span>
             <img src="./images/growlighton.png" align="center" width="30%" style="max-width:60px;"/>
+>>>>>>> 12c97d1571bfe01b715464e517499e16869b197a
             <span>
               <a style="color:#000;">
                 Off
@@ -248,15 +338,25 @@ if(isset($_GET['light']) == false){
               <a style="color:#000;">
                 On
               </a>
+<<<<<<< HEAD
+            </span> -->
+=======
             </span>
+>>>>>>> 12c97d1571bfe01b715464e517499e16869b197a
             </font>
             </div>
             </div>
             <div align="center" class="card-action">
               <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/minilighticon5.png" width="100%" /><i class="material-icons">minilight</i></a>&nbsp;
+<<<<<<< HEAD
+              <a class="btn-floating btn-large waves-effect waves-light white" onclick="activateFan();"><img src="./images/fanicon4.png" width="100%" /></a>&nbsp;
+              <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/growlighton.png" width="100%" style="vertical-align: middle;position: absolute;top: 0;bottom: 0;margin: auto;"  /><i class="material-icons">growlight</i></a>&nbsp;
+              <a class="btn-floating btn-large waves-effect waves-light white" onclick="activateWaterPumpServo();"><img src="./images/waterplanticon6.png" width="100%" /><i class="material-icons">waterplant</i></a>&nbsp;
+=======
               <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/fanicon4.png" width="100%" /></a>&nbsp;
               <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/growlighton.png" width="100%" style="vertical-align: middle;position: absolute;top: 0;bottom: 0;margin: auto;"  /><i class="material-icons">growlight</i></a>&nbsp;
               <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/waterplanticon6.png" width="100%" /><i class="material-icons">waterplant</i></a>&nbsp;
+>>>>>>> 12c97d1571bfe01b715464e517499e16869b197a
               <a class="btn-floating btn-large waves-effect waves-light black"><img src="./images/reloadicon.png" width="100%"/><i class="material-icons">reload</i></a>
             </div>
           </div>
@@ -292,32 +392,32 @@ if(isset($_GET['light']) == false){
 
       <script type="text/javascript">
 
-      var theMiniLight = "<?= $which_light; ?>";
-      $('#statHolder').attr('class', '');
-      switch(theMiniLight)
+      var fanLightStatusVar = "<?= $fan_status; ?>";
+      $('#statFanHolder').attr('class', '');
+      switch(fanLightStatusVar)
       {
         case 'on' :
-            $('#statHolder').addClass('miniLightON')
+            $('#statFanHolder').addClass('fan is on')
         break;
 
         case 'off' :
-            $('#statHolder').addClass('miniLightOFF')
+            $('#statFanHolder').addClass('fan is off')
         break;
       }
 
-      function callMiniLightOn()
+      function callFanOn()
       {
         $.ajax({
-            url: 'mini_light_on.php',
+            url: 'fanOn.php',
             success: loadDataSuccess,
             error : loadError
         });
       }
 
-      function callMiniLightOff()
+      function callFanOff()
       {
         $.ajax({
-          url: 'mini_light_off.php',
+          url: 'fanOff.php',
           success: loadDataSuccess,
           error : loadError
         });
@@ -335,7 +435,7 @@ if(isset($_GET['light']) == false){
 
       function loadDataSuccess(data)
       {
-        location.href = '?light='+data;
+        location.href = '?fan='+data;
       }
       </script>
 
@@ -355,3 +455,9 @@ if(isset($_GET['light']) == false){
   </html>
 
 </p>
+
+<?php
+
+}
+
+?>

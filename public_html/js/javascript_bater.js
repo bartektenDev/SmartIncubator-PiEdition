@@ -137,3 +137,53 @@ function countIncubationDays()
     incubationDisplay.innerHTML = Difference_In_Days;
   }
 }
+
+function dismissAlert()
+{
+alert("youre excused");
+
+  var x = new XMLHttpRequest();
+      x.open("GET","hidealertwrite.php",true);
+      x.send();
+      return false;
+
+}
+
+function activateFan() {
+  // var fanStat = document.getElementById("fanStatusText").innerHTML;
+  // if(fanStat == "off") {
+  //    $.ajax({
+  //        url: './fanOn.php',
+  //        success: loadDataSuccess,
+  //        error : loadError
+  //    });
+  // } else if (fanStat == "on") {
+  //   $.ajax({
+  //       url: './fanOff.php',
+  //       success: loadDataSuccess,
+  //       error : loadError
+  //   });
+  // }
+  $.ajax({
+      url: './fanOn.php',
+      success: loadDataSuccess,
+      error : loadError
+  });
+}
+
+function activateWaterPumpServo() {
+  var retVal = confirm("Activating the water pump will run for only 5 seconds. Are you sure you want to turn on water pump?");
+  alert(retVal);
+  if( retVal == true ) {
+     //continue
+     $.ajax({
+         url: '../waterpump.php',
+         success: loadDataSuccess,
+         error : loadError
+     });
+  } else {
+     //user clicked cancel
+
+     return false;
+  }
+}

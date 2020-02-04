@@ -107,12 +107,12 @@ if __name__ == "__main__":
                 print (out_string + "%")
 
                 # Write to log file so app can read
-                f = open ("./logs/currentTemp.txt", "w")
+                f = open ("/var/www/html/python_scripts/logs/currentTemp.txt", "w")
                 tempF = "%.1f" % temp
                 f.write(tempF)
                 f.close()
 
-                f = open ("./logs/currentHumidity.txt", "w")
+                f = open ("/var/www/html/python_scripts/logs/currentHumidity.txt", "w")
                 hummis = "%.1f" % humid
                 f.write(hummis)
                 f.close()
