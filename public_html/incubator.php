@@ -112,7 +112,6 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
         </div>
       </nav>
 
-<<<<<<< HEAD
       <?php
         $file = fopen("./python_scripts/logs/dismissAlertStatus.txt","r");
 
@@ -137,21 +136,6 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
       <span class="card-title">Welcome! Let's get started</span>
       <div class="card-image">
         <img id="topImageDash" align="center" style="-webkit-user-select: none;" src="./images/growfactory.gif" width="15%"/>
-=======
-      <div class="row">
-        <div align="center" style="margin:auto;max-width:420px;">
-          <div class="card">
-            <p></p>
-            <span class="card-title">Welcome! Let's get started</span>
-            <div class="card-image">
-              <img id="topImageDash" align="center" style="-webkit-user-select: none;" src="./images/growfactory.gif" width="15%">
-            </div>
-            <div class="card-action">
-              <a href="settings.html">Setup My EarthBOX</a>
-            </div>
-          </div>
-        </div>
->>>>>>> 12c97d1571bfe01b715464e517499e16869b197a
       </div>
       <div class="card-action">
         <a href="settings.html">Setup My EarthBOX</a>
@@ -227,13 +211,8 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
               <span class="card-title">Incubator Controls</span>
               <p></p>
               <div align="center"><font size="4" color="#000">
-<<<<<<< HEAD
                 <img src="./images/360plant.gif" align="center" height="25%" style="max-height:190px;"/>&nbsp;&nbsp;
                 <img src="./images/tempicon2.png" align="center" width="15%" style="max-width:60px">
-=======
-                <img src="./images/weedplantincubator.png" align="center" height="25%" style="max-height:200px;">&nbsp;&nbsp;
-                <img src="./images/tempicon2.png" align="center" width="15%" style="max-width:44px">
->>>>>>> 12c97d1571bfe01b715464e517499e16869b197a
                 <a id="tempDisplay" style="color:#000;">
                   <?php
                     $file = fopen("./python_scripts/logs/currentTemp.txt","r");
@@ -241,11 +220,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
                     fclose($file);
                   ?>
                 </a><a id="degree" style="color:#000;">°</a>&nbsp;&nbsp;
-<<<<<<< HEAD
                 <img src="./images/humidityredblackoutline.png" align="center" width="30%" style="max-width:60px"/>
-=======
-                <img src="./images/humidityredblackoutline.png" align="center" width="30%" style="max-width:60px">
->>>>>>> 12c97d1571bfe01b715464e517499e16869b197a
                 <a id="humidityDisplay" style="color:#000;">
                   <?php
                     $file = fopen("./python_scripts/logs/currentHumidity.txt","r");
@@ -262,11 +237,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
                   ?>
               </a><a id="pHdlol">pH</a> -->
 
-<<<<<<< HEAD
               <img src="./images/soiltemp.png" align="center" width="30%" style="max-width:70px;"/>
-=======
-              <img src="./images/soiltemp.png" align="center" width="30%" style="max-width:70px;">
->>>>>>> 12c97d1571bfe01b715464e517499e16869b197a
               <a id="soilTempDisplay" style="color:#000;">
                 <?php
                   $file = fopen("./python_scripts/logs/currentSoilTemp.txt","r");
@@ -274,11 +245,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
                   fclose($file);
                 ?>
               </a><a id="percent" style="color:#000;">%</a>&nbsp;&nbsp;
-<<<<<<< HEAD
               <img src="./images/drymeter3.png" id="moistMeterIMG" align="center" width="50%" style="max-width:110px;"/>
-=======
-              <img src="./images/drymeter3.png" id="moistMeterIMG" align="center" width="50%" style="max-width:110px;">
->>>>>>> 12c97d1571bfe01b715464e517499e16869b197a
               <a id="soilMoistureDisplay" style="color:#000;">
                 <?php
                   $file = fopen("./python_scripts/logs/currentSoilMoisture.txt","r");
@@ -292,7 +259,6 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
             <font size="3" color="#000">
             <img src="./images/minilightbulb.png" align="center" width="30%" style="max-width:60px;"/>
             <span>
-<<<<<<< HEAD
               <?php
                 $file = fopen("./python_scripts/logs/miniLightStatus.txt","r");
                 echo fgets($file);
@@ -309,16 +275,6 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
             </span>
 
             <!-- <img src="./images/growlighton.png" align="center" width="30%" style="max-width:60px;"/>
-=======
-              <a style="color:#000;">
-                Off
-              </a>
-              /
-              <a style="color:#000;">
-                On
-              </a>
-            </span>
-            <img src="./images/fanon.gif" align="center" width="30%" style="max-width:50px;">
             <span>
               <a style="color:#000;">
                 Off
@@ -327,36 +283,15 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
               <a style="color:#000;">
                 On
               </a>
-            </span>
-            <img src="./images/growlighton.png" align="center" width="30%" style="max-width:60px;"/>
->>>>>>> 12c97d1571bfe01b715464e517499e16869b197a
-            <span>
-              <a style="color:#000;">
-                Off
-              </a>
-              /
-              <a style="color:#000;">
-                On
-              </a>
-<<<<<<< HEAD
             </span> -->
-=======
-            </span>
->>>>>>> 12c97d1571bfe01b715464e517499e16869b197a
             </font>
             </div>
             </div>
             <div align="center" class="card-action">
               <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/minilighticon5.png" width="100%" /><i class="material-icons">minilight</i></a>&nbsp;
-<<<<<<< HEAD
               <a class="btn-floating btn-large waves-effect waves-light white" onclick="activateFan();"><img src="./images/fanicon4.png" width="100%" /></a>&nbsp;
               <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/growlighton.png" width="100%" style="vertical-align: middle;position: absolute;top: 0;bottom: 0;margin: auto;"  /><i class="material-icons">growlight</i></a>&nbsp;
               <a class="btn-floating btn-large waves-effect waves-light white" onclick="activateWaterPumpServo();"><img src="./images/waterplanticon6.png" width="100%" /><i class="material-icons">waterplant</i></a>&nbsp;
-=======
-              <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/fanicon4.png" width="100%" /></a>&nbsp;
-              <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/growlighton.png" width="100%" style="vertical-align: middle;position: absolute;top: 0;bottom: 0;margin: auto;"  /><i class="material-icons">growlight</i></a>&nbsp;
-              <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/waterplanticon6.png" width="100%" /><i class="material-icons">waterplant</i></a>&nbsp;
->>>>>>> 12c97d1571bfe01b715464e517499e16869b197a
               <a class="btn-floating btn-large waves-effect waves-light black"><img src="./images/reloadicon.png" width="100%"/><i class="material-icons">reload</i></a>
             </div>
           </div>
