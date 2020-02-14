@@ -1,4 +1,6 @@
 <?php
+
+?>
 <!DOCTYPE html>
   <html>
     <head>
@@ -67,4 +69,3 @@
       <div class="drag-target"></div>
     </body>
   </html>
-?>

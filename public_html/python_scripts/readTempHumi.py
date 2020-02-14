@@ -104,7 +104,7 @@ if __name__ == "__main__":
                 temp = obj.read_tmperature()
                 humid = obj.read_humidity()
                 out_string = "Temp=%.1f F Humi=%.1f" % (temp, humid)
-                print (out_string + "%")
+                #print (out_string + "%")
 
                 # Write to log file so app can read
                 f = open ("/var/www/html/python_scripts/logs/currentTemp.txt", "w")
@@ -117,4 +117,4 @@ if __name__ == "__main__":
                 f.write(hummis)
                 f.close()
 
-                time.sleep(5)
+                time.sleep(3)

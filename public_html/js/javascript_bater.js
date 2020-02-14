@@ -22,8 +22,9 @@ function readIP()
 
 function openWebcamLiveStream()
 {
-  //launch webcam stream defult is http://IPCAMADDRESSHERE:8082
-  document.getElementById("webcamLiveStreamDisplay").src = "http://" + window.location.hostname + ":8082"
+  if(window.location.hostname != "127.0.0.1"){
+    document.getElementById("webcamLiveStreamDisplay").src = "http://" + window.location.hostname + ":8082"
+  }
 
   //readMoistMeter
   readMoistMeter();
@@ -140,8 +141,6 @@ function countIncubationDays()
 
 function dismissAlert()
 {
-alert("youre excused");
-
   var x = new XMLHttpRequest();
       x.open("GET","hidealertwrite.php",true);
       x.send();
@@ -172,18 +171,35 @@ function activateFan() {
 }
 
 function activateWaterPumpServo() {
-  var retVal = confirm("Activating the water pump will run for only 5 seconds. Are you sure you want to turn on water pump?");
-  alert(retVal);
+  var retVal = confirm("Activating the water pump will run for only 3 seconds. Are you sure you want activate the water pump?");
   if( retVal == true ) {
      //continue
-     $.ajax({
-         url: '../waterpump.php',
-         success: loadDataSuccess,
-         error : loadError
-     });
+     var x = new XMLHttpRequest();
+         x.open("GET","waterpump.php",true);
+         x.send();
+         return false;
   } else {
      //user clicked cancel
 
      return false;
   }
+}
+
+function callGoodbye()  {
+  $.ajax({
+    url:"reboot.php", //the page containing php script
+    type: "POST", //request type
+    success:function(result){
+     header('location : reboot.php')
+   }
+ });
+}
+
+function startRebootTimer() {
+  var myVar = setInterval(attemptReconnection, 105000);
+}
+
+function attemptReconnection() {
+  earthBoxPreviousIP = window.location.hostname + ":" + window.location.port;
+  document.location.href = "http://" + earthBoxPreviousIP + "/index.php";
 }

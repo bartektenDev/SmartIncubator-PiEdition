@@ -8,9 +8,7 @@ $password = "password";
 //
 //
 if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
-  if(isset($_GET['light']) == false){
-    header("Location: index.php");
-  }
+
 ?>
 
   <html>
@@ -46,36 +44,27 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
 
         <br /><input type="password" title="Enter your password" name="txtPassword" /></p>
 
-        <p><input type="submit" name="Submit" class="bigbutton" value="Login" /></p>
+        <p><button class="btn-large" type="submit" name="Submit" value="Login">Login
+            <i class="material-icons">navigate_next</i>
+          </button></p>
 
     </form>
     </font>
 
+    <a style="margin-left:60px;">ver 1.0.9</a>
+
     <p>
-
-    <?php
-    $which_light = $_GET['light'];
-    //echo 'which door? ' .  $which_door;
-
-    if (isset($_POST['miniLightON']))
-    {
-    exec("sudo python var/www/html/python_scripts/miniLightOn.py");
-    }
-    if (isset($_POST['miniLightOFF']))
-    {
-    exec("sudo python /var/www/html/python_scripts/miniLightOff.py");
-    }
-
-    unset($_POST);
-    //echo "<hr />";
-    //echo "<strong>Right = ".isset($_POST['RightOPEN'])."</strong><br /><strong>Left = ".isset($_POST['LeftOPEN'])."</strong>";
-    ?>
 
 <p></p>
 
   <?php
 }else{
+
+
 ?>
+
+<p></p>
+
 
     <!doctype html>
     <head>
@@ -96,7 +85,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
     </head>
     <body onload="openWebcamLiveStream();" style>
       <nav class="teal" role="navigation">
-        <div class="nav-wrapper container"><a size="3">1.0.7&nbsp;</a><a id="logo-container" href="incubator.php" class="brand-logo">🌎 EarthBOX</a>
+        <div class="nav-wrapper container"><a size="3">1.0.9&nbsp;</a><a id="logo-container" href="incubator.php" class="brand-logo">🌎 EarthBOX</a>
           <ul class="right hide-on-med-and-down">
             <li><a href="incubator.php">Incubator</a></li>
           </ul>
@@ -119,33 +108,32 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
         fclose($file);
         if($outputFileData == "youreExcusedKat"){
 
-?>
+      ?>
 
-<?php
+      <?php
 
-        }else{
+              }else{
 
-?>
+      ?>
 
-<div class="row">
-  <div align="center" style="margin:auto;max-width:420px;">
-    <div class="card">
-      <p></p>
-      <button onclick="dismissAlert();" id="topImageDash" align="right" style="-webkit-user-select: none;margin:auto;margin-right:8px;margin-top:8px;">Close</button>
-      <p></p>
-      <span class="card-title">Welcome! Let's get started</span>
-      <div class="card-image">
-        <img id="topImageDash" align="center" style="-webkit-user-select: none;" src="./images/growfactory.gif" width="15%"/>
+      <div class="row">
+        <div align="center" style="margin:auto;max-width:420px;">
+          <div class="card">
+            <p></p>
+            <button onclick="dismissAlert();" id="topImageDash" align="right" style="-webkit-user-select: none;margin:auto;margin-right:8px;margin-top:8px;">Close</button>
+            <p></p>
+            <span class="card-title">Welcome! Let's get started</span>
+            <div class="card-image">
+              <img id="topImageDash" align="center" style="-webkit-user-select: none;" src="./images/growfactory.gif" width="15%"/>
+            </div>
+            <div class="card-action">
+              <a href="settings.html">Setup My EarthBOX</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card-action">
-        <a href="settings.html">Setup My EarthBOX</a>
-      </div>
-    </div>
-  </div>
-</div>
 
-<?php
-
+      <?php
         }
       ?>
 
@@ -192,7 +180,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
         <div align="center" style="margin:auto;max-width:420px;">
           <div class="card">
             <div class="card-image">
-              <img id="webcamLiveStreamDisplay" align="center" style="-webkit-user-select: none;" src="" width="95%"/>
+              <img id="webcamLiveStreamDisplay" align="center" style="-webkit-user-select: none;" src="./images/happyearth.gif" width="95%"/>
               <span class="card-title"><img align="left" src="./images/reddot.gif" width="12px" style="max-width:12px;margin-top:13px;"/><font color="#fff">LiveStream</font></span>
             </div>
             <div class="card-action">
@@ -256,6 +244,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
               </font>
 
             <p></p>
+<!--
             <font size="3" color="#000">
             <img src="./images/minilightbulb.png" align="center" width="30%" style="max-width:60px;"/>
             <span>
@@ -273,6 +262,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
                 fclose($file);
               ?>
             </span>
+-->
 
             <!-- <img src="./images/growlighton.png" align="center" width="30%" style="max-width:60px;"/>
             <span>
@@ -287,12 +277,13 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
             </font>
             </div>
             </div>
+
             <div align="center" class="card-action">
-              <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/minilighticon5.png" width="100%" /><i class="material-icons">minilight</i></a>&nbsp;
+              <!--<a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/minilighticon5.png" width="100%" /><i class="material-icons">minilight</i></a>&nbsp;
               <a class="btn-floating btn-large waves-effect waves-light white" onclick="activateFan();"><img src="./images/fanicon4.png" width="100%" /></a>&nbsp;
-              <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/growlighton.png" width="100%" style="vertical-align: middle;position: absolute;top: 0;bottom: 0;margin: auto;"  /><i class="material-icons">growlight</i></a>&nbsp;
+              <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/growlighton.png" width="100%" style="vertical-align: middle;position: absolute;top: 0;bottom: 0;margin: auto;"  /><i class="material-icons">growlight</i></a>&nbsp;-->
               <a class="btn-floating btn-large waves-effect waves-light white" onclick="activateWaterPumpServo();"><img src="./images/waterplanticon6.png" width="100%" /><i class="material-icons">waterplant</i></a>&nbsp;
-              <a class="btn-floating btn-large waves-effect waves-light black"><img src="./images/reloadicon.png" width="100%"/><i class="material-icons">reload</i></a>
+              <a class="btn-floating btn-large waves-effect waves-light black" href="reboot.php"><img src="./images/reloadicon.png" width="100%"/><i class="material-icons">reload</i></a><font size="3">&nbsp;&nbsp;Reboot 🌎</font>
             </div>
           </div>
         </div>
@@ -324,55 +315,6 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
 
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="js/materialize.min.js"></script>
-
-      <script type="text/javascript">
-
-      var fanLightStatusVar = "<?= $fan_status; ?>";
-      $('#statFanHolder').attr('class', '');
-      switch(fanLightStatusVar)
-      {
-        case 'on' :
-            $('#statFanHolder').addClass('fan is on')
-        break;
-
-        case 'off' :
-            $('#statFanHolder').addClass('fan is off')
-        break;
-      }
-
-      function callFanOn()
-      {
-        $.ajax({
-            url: 'fanOn.php',
-            success: loadDataSuccess,
-            error : loadError
-        });
-      }
-
-      function callFanOff()
-      {
-        $.ajax({
-          url: 'fanOff.php',
-          success: loadDataSuccess,
-          error : loadError
-        });
-      }
-
-      function loadError(jqXHR, textStatus, errorThrown)
-      {
-        loadDataError(errorThrown);
-      }
-
-      function loadDataError(error)
-      {
-        console.log('Load Error : ' + error);
-      }
-
-      function loadDataSuccess(data)
-      {
-        location.href = '?fan='+data;
-      }
-      </script>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

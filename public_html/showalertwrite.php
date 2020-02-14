@@ -1,6 +1,6 @@
 <?php
 $myfile = fopen("python_scripts/logs/dismissAlertStatus.txt", "w") or die("Unable to open file!");
-$txt = "youreExcusedKat";
+$txt = "";
 fwrite($myfile, $txt);
 fclose($myfile);
 
