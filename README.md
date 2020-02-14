@@ -8,3 +8,4 @@ dispatch onto their raspberry pi for projects like incubation for their plants. 
 water pump, night light, camera live stream and more!
 
 <img src="./public_html/images/smartincubator.PNG" width="100%" title="EarthBOX" />
+<img src="./public_html/images/snappedlatestincubatorpreview.PNG" width="100%" title="EarthBOX" />
