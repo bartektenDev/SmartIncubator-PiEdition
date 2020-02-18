@@ -18,6 +18,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <link rel="stylesheet" href="./css/animate.css">
+      <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css"/>
 <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -194,51 +195,58 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
         <div align="center" style="margin:auto;max-width:420px;">
           <div class="card white">
             <div class="card-content black-text">
-              <span class="card-title">Incubator Controls</span>
+              <span class="card-title">EarthBOX Details</span>
               <p></p>
               <div align="center"><font size="4" color="#000">
-                <img src="./images/360plant.gif" align="center" height="25%" style="max-height:190px;"/>&nbsp;&nbsp;
-                <img src="./images/tempicon2.png" align="center" width="15%" style="max-width:60px">
-                <a id="tempDisplay" style="color:#000;">
+                <img src="./images/360plant.gif" align="center" height="35%" style="max-height:220px;"/>
+
+                <p></p>
+                <img src="./images/tempicon2.png" align="center" width="30%" style="max-width:50px">
+                <a id="tempDisplay" style="font-size: 26px;font-family: 'Squada One', cursive;color:#000;">
                   <?php
                     $file = fopen("./python_scripts/logs/currentTemp.txt","r");
                     echo fgets($file);
                     fclose($file);
                   ?>
-                </a><a id="degree" style="color:#000;">°</a>&nbsp;&nbsp;
-                <img src="./images/humidityredblackoutline.png" align="center" width="30%" style="max-width:60px"/>
-                <a id="humidityDisplay" style="color:#000;">
+                </a><a id="degree" style="font-size: 26px;font-family: 'Squada One', cursive;color:#000;">°</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="./images/humidityredblackoutline.png" align="center" width="30%" style="max-width:70px"/>
+                <a id="humidityDisplay" style="font-size: 26px;font-family: 'Squada One', cursive;color:#000;">
                   <?php
                     $file = fopen("./python_scripts/logs/currentHumidity.txt","r");
                     echo fgets($file);
                     fclose($file);
                   ?>
-                </a><a id="percent" style="color:#000;">%</a>
+                </a><a id="percent" style="font-size: 26px;font-family: 'Squada One', cursive;color:#000;">%</a>
                 <!-- <img src="./images/ph-icon-6.png" align="center" width="25%" style="max-width:60px">
                 <a id="phLevelDisplay">
-                  <?php
-                    $file = fopen("./python_scripts/logs/currentPh.txt","r");
-                    echo fgets($file);
-                    fclose($file);
-                  ?>
-              </a><a id="pHdlol">pH</a> -->
+                    <?php
+                      $file = fopen("./python_scripts/logs/currentPh.txt","r");
+                      echo fgets($file);
+                      fclose($file);
+                    ?>
+                </a><a id="pHdlol">pH</a> -->
+                  <p></p>
+                  <a style="margin:auto;margin-right:25px;">Air Temperature</a><a style="margin:auto;margin-left:25px;">Humidity Level</a>
+                  <p></p>
 
-              <img src="./images/soiltemp.png" align="center" width="30%" style="max-width:70px;"/>
-              <a id="soilTempDisplay" style="color:#000;">
-                <?php
-                  $file = fopen("./python_scripts/logs/currentSoilTemp.txt","r");
-                  echo fgets($file);
-                  fclose($file);
-                ?>
-              </a><a id="percent" style="color:#000;">%</a>&nbsp;&nbsp;
-              <img src="./images/drymeter3.png" id="moistMeterIMG" align="center" width="50%" style="max-width:110px;"/>
-              <a id="soilMoistureDisplay" style="color:#000;">
-                <?php
-                  $file = fopen("./python_scripts/logs/currentSoilMoisture.txt","r");
-                  echo fgets($file);
-                  fclose($file);
-                ?>/1000
-            </a>
+                  <img src="./images/soiltemp.png" align="center" width="30%" style="font-size: 26px;font-family: 'Squada One', cursive;max-width:74px;"/>
+                  <a id="soilTempDisplay" style="font-size: 26px;font-family: 'Squada One', cursive;color:#000;">
+                    <?php
+                      $file = fopen("./python_scripts/logs/currentSoilTemp.txt","r");
+                      echo fgets($file);
+                      fclose($file);
+                    ?>
+                  </a><a id="degree" style="font-size: 26px;font-family: 'Squada One', cursive;color:#000;">°</a>&nbsp;&nbsp;
+                  <img src="./images/drymeter3.png" id="moistMeterIMG" align="center" width="30%" style="font-family: 'Squada One', cursive;max-width:100px;"/>
+                  <a id="soilMoistureDisplay" style="font-size: 26px;font-family: 'Squada One', cursive;color:#000;">
+                    <?php
+                      $file = fopen("./python_scripts/logs/currentSoilMoisture.txt","r");
+                      echo fgets($file);
+                      fclose($file);
+                    ?>/1K
+                </a>
+                  <p></p>
+                  <a style="margin:auto;margin-right:30px;">Soil Temperature</a><a style="margin:auto;margin-left:30px;">Moisture Level</a>
               </font>
 
             <p></p>
@@ -281,7 +289,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
               <a class="btn-floating btn-large waves-effect waves-light white" onclick="activateFan();"><img src="./images/fanicon4.png" width="100%" /></a>&nbsp;
               <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/growlighton.png" width="100%" style="vertical-align: middle;position: absolute;top: 0;bottom: 0;margin: auto;"  /><i class="material-icons">growlight</i></a>&nbsp;-->
               <a class="btn-floating btn-large waves-effect waves-light white" onclick="activateWaterPumpServo();"><img src="./images/waterplanticon6.png" width="100%" /><i class="material-icons">waterplant</i></a>&nbsp;
-              <a class="btn-floating btn-large waves-effect waves-light black" href="reboot.php"><img src="./images/reloadicon.png" width="100%"/><i class="material-icons">reload</i></a><font size="3">&nbsp;&nbsp;Reboot 🌎</font>
+              <a class="btn-floating btn-large waves-effect waves-light black" href="reboot.php"><img src="./images/reloadicon.png" width="100%"/><i class="material-icons">reload</i></a>
             </div>
           </div>
         </div>
