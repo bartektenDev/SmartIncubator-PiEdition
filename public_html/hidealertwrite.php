@@ -1,8 +1,7 @@
 <?php
-$myfile = fopen("python_scripts/logs/dismissAlertStatus.txt", "w") or die("Unable to open file!");
-$txt = "youreExcusedKat";
-fwrite($myfile, $txt);
-fclose($myfile);
+$data = "youreExcusedKat";
 
-header("Refresh:2; url=index.php");
+$file = fopen("python_scripts/logs/dismissAlertStatus.txt", 'w') or die("Unable to open file!");
+fwrite($file, $data);
+fclose($file);
 ?>

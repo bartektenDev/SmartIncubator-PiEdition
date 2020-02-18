@@ -141,17 +141,25 @@ function countIncubationDays()
 
 function dismissAlert()
 {
-  var x = new XMLHttpRequest();
-      x.open("GET","hidealertwrite.php",true);
-      x.send();
-      return false;
+  var data = new FormData();
+  data.append("data" , "");
+  var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
+  xhr.open( 'post', 'hidealertwrite.php', true );
+  xhr.send(data);
+
+  currentURL = window.location.pathname;
+
+  if(currentURL == "/incubator.php" || currentURL == "/s_incubate/public_html/incubator.php"){
+    location.reload();
+  }
 }
 
 function showStartupTips()  {
-  var x = new XMLHttpRequest();
-      x.open("GET","showalertwrite.php",true);
-      x.send();
-      return false;
+  var data = new FormData();
+  data.append("data" , "");
+  var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
+  xhr.open( 'post', 'showalertwrite.php', true );
+  xhr.send(data);
 }
 
 function activateFan() {

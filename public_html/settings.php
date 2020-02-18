@@ -19,16 +19,16 @@ if ("password" == $password) {
 
     <body style onload="readIP()">
       <nav class="teal" role="navigation">
-        <div class="nav-wrapper container"><a size="3">1.0.10&nbsp;</a><a id="logo-container" href="incubator.php" class="brand-logo">🌎 Settings</a>
+        <div class="nav-wrapper container"><a id="logo-container" href="incubator.php" class="brand-logo">🌎 Settings</a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="incubator.php">Incubator</a></li>
+            <li><a href="incubator.php">Dashboard</a></li>
           </ul>
           <ul class="right hide-on-med-and-down">
             <li><a href="settings.html">Settings</a></li>
           </ul>
 
           <ul id="nav-mobile" class="sidenav" style="transform: translateX(-105%);">
-            <li><a href="incubator.php">Incubator</a></li>
+            <li><a href="incubator.php">Dashboard</a></li>
             <li><a href="settings.html">Settings</a></li>
           </ul>
           <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -41,8 +41,14 @@ if ("password" == $password) {
       <div align="center" class="animated fadeIn delay-1s">This Device's Public IP:<p id="publicIPdisplay">IP NOT FOUND!</p></div>
       -->
       <div align="center" class="animated fadeIn delay-1s">
-        <a class="waves-effect waves-light btn">Show Startup Tips</a>&nbsp;<a class="waves-effect waves-light btn">Hide Startup Tips</a>
+        <a class="waves-effect waves-light btn" onclick="showStartupTips();">Show Startup Tips</a>&nbsp;<a class="waves-effect waves-light btn" onclick="dismissAlert();">Hide Startup Tips</a>
       </div>
+
+      <p></p>
+      <p align="center" class="animated fadeIn delay-1s">Developed by Bart Tarasewicz</p>
+
+      <p></p>
+      <p align="center" class="animated fadeIn delay-1s">The best smart plantary incubator,<br> engineered with fine Polish programming.</p>
 
       <p></p>
 

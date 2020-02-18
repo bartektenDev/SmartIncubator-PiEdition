@@ -3,8 +3,8 @@
 $outputFileData = "";
 
 // // Define your username and password
-$username = "bart";
-$password = "password";
+$username = "admin";
+$password = "earthbox";
 //
 //
 if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
@@ -83,16 +83,16 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
     </head>
     <body onload="openWebcamLiveStream();" style>
       <nav class="teal" role="navigation">
-        <div class="nav-wrapper container"><a size="3">1.0.10&nbsp;</a><a id="logo-container" href="incubator.php" class="brand-logo">🌎 EarthBOX</a>
+        <div class="nav-wrapper container"><a id="logo-container" href="incubator.php" class="brand-logo">🌎 EarthBOX</a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="incubator.php">Incubator</a></li>
+            <li><a href="incubator.php">Dashboard</a></li>
           </ul>
           <ul class="right hide-on-med-and-down">
             <li><a href="settings.php">Settings</a></li>
           </ul>
 
           <ul id="nav-mobile" class="sidenav" style="transform: translateX(-105%);">
-            <li><a href="incubator.php">Incubator</a></li>
+            <li><a href="incubator.php">Dashboard</a></li>
             <li><a href="settings.php">Settings</a></li>
           </ul>
           <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -116,14 +116,16 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
         <div align="center" style="margin:auto;max-width:420px;">
           <div class="card">
             <p></p>
-            <button onclick="dismissAlert();" id="topImageDash" align="right" style="-webkit-user-select: none;margin:auto;margin-right:8px;margin-top:8px;">Close</button>
+            <a onclick="dismissAlert();" style="margin-left:310px;margin-top:12px;"class="waves-effect waves-light btn red">Close</a>
             <p></p>
             <span class="card-title">Welcome! Let's get started</span>
             <div class="card-image">
-              <img id="topImageDash" align="center" style="-webkit-user-select: none;" src="./images/growfactory.gif" width="15%"/>
+              <p></p>
+              <img id="topImageDash" align="center" style="-webkit-user-select: none;max-width:200px;" src="./images/sittingoncloud.gif" width="15%"/>
+              <p></p>
             </div>
             <div class="card-action">
-              <a href="settings.html">Setup My EarthBOX</a>
+              <a href="settings.php">Setup My EarthBOX</a>
             </div>
           </div>
         </div>
@@ -164,7 +166,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
               </div>
             <p></p>
             <div class="card-action">
-              <a href="settings.html">Go to settings</a>
+              <a href="settings.php">Go to settings</a>
             </div>
           </div>
         </div>
@@ -176,7 +178,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
         <div align="center" style="margin:auto;max-width:420px;">
           <div class="card">
             <div class="card-image">
-              <img id="webcamLiveStreamDisplay" alt="Live Stream will display here." align="center" style="-webkit-user-select: none;" src="./images/happyearth.gif" width="95%"/>
+              <img id="webcamLiveStreamDisplay" alt="Live Stream will display here." align="center" style="-webkit-user-select: none;" src="./images/livestreamnotfound.jpg" width="95%"/>
               <span class="card-title"><img align="left" src="./images/reddot.gif" width="12px" style="max-width:12px;margin-top:13px;"/><font color="#fff">LiveStream</font></span>
             </div>
             <div class="card-action">
@@ -302,12 +304,6 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
           <button type="submit" onclick="" style="width: 304px;height: 54px" value="miniLightOFF">Mini Light OFF <img src="images/minilighticon.png" width="18px"></button>
         </form>
       </div> -->
-
-      <p></p>
-      <p align="center" class="animated fadeIn delay-1s">Developed by Bart Tarasewicz</p>
-
-      <p></p>
-      <p align="center" class="animated fadeIn delay-1s">The best smart plantary incubator,<br> engineered with fine Polish programming.</p>
 
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="js/materialize.min.js"></script>
