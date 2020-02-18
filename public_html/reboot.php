@@ -41,14 +41,15 @@ exec("sudo python /var/www/html/python_scripts/selfGoodbye.py");
       <p></p>
 
       <div class="row">
-        <div align="center" style="margin:auto;max-width:75%;">
+        <div align="center" style="margin:auto;max-width:420px;">
           <div class="card">
             <div class="card-content black-text">
               <span class="card-title">EarthBOX is rebooting...</span>
               <div class="card-image">
-                <img align="center" style="-webkit-user-select: none;" src="./images/earthloading.gif" width="95%"/>
+                <img align="center" src="./images/earthloading.gif" style="margin:auto;max-height:300px;max-width:300px;"/>
               </div>
-              <span class="card-title">Grab some popcorn 🍿</span>We will automatically connect once we're online
+              <span class="card-title">Grab some popcorn 🍿</span>We will automatically connect once we're online<br></br>
+              <a class="waves-effect waves-teal btn-flat" onclick="attemptReconnectBtn();">Attempt Reconnect</a>
             </div>
           </div>
         </div>

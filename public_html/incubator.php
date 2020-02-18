@@ -51,7 +51,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
     </form>
     </font>
 
-    <a style="margin-left:60px;">ver 1.0.9</a>
+    <a style="margin-left:60px;">ver 1.0.10</a>
 
     <p>
 
@@ -59,8 +59,6 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
 
   <?php
 }else{
-
-
 ?>
 
 <p></p>
@@ -85,17 +83,17 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
     </head>
     <body onload="openWebcamLiveStream();" style>
       <nav class="teal" role="navigation">
-        <div class="nav-wrapper container"><a size="3">1.0.9&nbsp;</a><a id="logo-container" href="incubator.php" class="brand-logo">🌎 EarthBOX</a>
+        <div class="nav-wrapper container"><a size="3">1.0.10&nbsp;</a><a id="logo-container" href="incubator.php" class="brand-logo">🌎 EarthBOX</a>
           <ul class="right hide-on-med-and-down">
             <li><a href="incubator.php">Incubator</a></li>
           </ul>
           <ul class="right hide-on-med-and-down">
-            <li><a href="settings.html">Settings</a></li>
+            <li><a href="settings.php">Settings</a></li>
           </ul>
 
           <ul id="nav-mobile" class="sidenav" style="transform: translateX(-105%);">
             <li><a href="incubator.php">Incubator</a></li>
-            <li><a href="settings.html">Settings</a></li>
+            <li><a href="settings.php">Settings</a></li>
           </ul>
           <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
@@ -111,9 +109,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
       ?>
 
       <?php
-
-              }else{
-
+        }else{
       ?>
 
       <div class="row">
@@ -180,7 +176,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
         <div align="center" style="margin:auto;max-width:420px;">
           <div class="card">
             <div class="card-image">
-              <img id="webcamLiveStreamDisplay" align="center" style="-webkit-user-select: none;" src="./images/happyearth.gif" width="95%"/>
+              <img id="webcamLiveStreamDisplay" alt="Live Stream will display here." align="center" style="-webkit-user-select: none;" src="./images/happyearth.gif" width="95%"/>
               <span class="card-title"><img align="left" src="./images/reddot.gif" width="12px" style="max-width:12px;margin-top:13px;"/><font color="#fff">LiveStream</font></span>
             </div>
             <div class="card-action">

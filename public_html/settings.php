@@ -1,5 +1,9 @@
 <?php
 
+$password = "password";
+
+if ("password" == $password) {
+
 ?>
 <!DOCTYPE html>
   <html>
@@ -14,8 +18,8 @@
     </head>
 
     <body style onload="readIP()">
-      <nav class="green lighten-1" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="incubator.php" class="brand-logo">Settings</a>
+      <nav class="teal" role="navigation">
+        <div class="nav-wrapper container"><a size="3">1.0.10&nbsp;</a><a id="logo-container" href="incubator.php" class="brand-logo">🌎 Settings</a>
           <ul class="right hide-on-med-and-down">
             <li><a href="incubator.php">Incubator</a></li>
           </ul>
@@ -37,21 +41,13 @@
       <div align="center" class="animated fadeIn delay-1s">This Device's Public IP:<p id="publicIPdisplay">IP NOT FOUND!</p></div>
       -->
       <div align="center" class="animated fadeIn delay-1s">
-        <?php
-          $file = fopen("./python_scripts/logs/dismissAlertStatus.txt","r");
-
-          $outputFileData = fgets($file);
-          fclose($file);
-          if($outputFileData == "youreExcusedKat"){
-
-        ?>
         <a class="waves-effect waves-light btn">Show Startup Tips</a>&nbsp;<a class="waves-effect waves-light btn">Hide Startup Tips</a>
       </div>
 
       <p></p>
 
       <div align="center" class="animated fadeIn delay-1s">
-        ver 1.0.9
+        ver 1.0.10
       </div>
 
       <!--JavaScript at end of body for optimized loading-->
@@ -69,3 +65,12 @@
       <div class="drag-target"></div>
     </body>
   </html>
+
+  <p></p>
+<?php
+}else{
+?>
+<p></p>
+<?php
+}
+ ?>

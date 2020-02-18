@@ -145,7 +145,13 @@ function dismissAlert()
       x.open("GET","hidealertwrite.php",true);
       x.send();
       return false;
+}
 
+function showStartupTips()  {
+  var x = new XMLHttpRequest();
+      x.open("GET","showalertwrite.php",true);
+      x.send();
+      return false;
 }
 
 function activateFan() {
@@ -174,32 +180,30 @@ function activateWaterPumpServo() {
   var retVal = confirm("Activating the water pump will run for only 3 seconds. Are you sure you want activate the water pump?");
   if( retVal == true ) {
      //continue
+     M.toast({html: 'Water pump activated!'})
      var x = new XMLHttpRequest();
          x.open("GET","waterpump.php",true);
          x.send();
          return false;
   } else {
      //user clicked cancel
-
+     M.toast({html: 'Cancelled Water Pump Activation...'})
      return false;
   }
 }
 
-function callGoodbye()  {
-  $.ajax({
-    url:"reboot.php", //the page containing php script
-    type: "POST", //request type
-    success:function(result){
-     header('location : reboot.php')
-   }
- });
-}
-
 function startRebootTimer() {
+  M.toast({html: 'EarthBOX initiated reboot...'})
   var myVar = setInterval(attemptReconnection, 105000);
 }
 
+function attemptReconnectBtn() {
+  earthBoxPreviousIP = window.location.hostname + ":" + window.location.port;
+  document.location.href = "http://" + earthBoxPreviousIP + "/index.php";
+}
+
 function attemptReconnection() {
+  M.toast({html: 'EarthBOX successfully rebooted.'})
   earthBoxPreviousIP = window.location.hostname + ":" + window.location.port;
   document.location.href = "http://" + earthBoxPreviousIP + "/index.php";
 }
