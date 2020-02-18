@@ -14,6 +14,7 @@ exec("sudo python /var/www/html/python_scripts/selfGoodbye.py");
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <link rel="stylesheet" href="./css/animate.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css"/>
+      <link rel="shortcut icon" href="./images/earthbegin.ico" type="image/x-icon"/>
 <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title></title>
