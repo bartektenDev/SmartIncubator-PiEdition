@@ -13,6 +13,9 @@ if ("password" == $password) {
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <link rel="stylesheet" href="./css/animate.css">
+      <link rel="icon"
+      type="image/png"
+      href="./images/earthboxicon.png" />
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
