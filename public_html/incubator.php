@@ -6,8 +6,8 @@ $outputFileData = "";
 $username = "admin";
 $password = "earthbox";
 //
-//
-if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
+//if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password)
+if (false) {
 
 ?>
 
@@ -119,20 +119,48 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
         <div align="center" style="margin:auto;max-width:420px;">
           <div class="card">
             <p></p>
-            <a onclick="dismissAlert();" style="margin-left:310px;margin-top:12px;"class="waves-effect waves-light btn red">Close</a>
+            <a onclick="dismissAlert();" style="margin-left:310px;margin-top:12px;"class="waves-effect waves-red btn-flat">Close</a>
             <p></p>
-            <span class="card-title">Welcome! Let's get started</span>
-            <div class="card-image">
-              <p></p>
-              <img id="topImageDash" align="center" style="-webkit-user-select: none;max-width:200px;" src="./images/sittingoncloud.gif" width="15%"/>
-              <p></p>
-            </div>
+            <div class="slider">
+               <ul class="slides">
+                 <li>
+                   <img src="./images/cannabissprouting.jpg"> <!-- random image -->
+                   <div class="caption center-align">
+                     <h3>EarthBOX Pro</h3>
+                     <h5 class="light white-text text-lighten-3">Welcome newbie!</h5>
+                   </div>
+                 </li>
+                 <li>
+                   <img src="./images/wateringcanna.jpg"> <!-- random image -->
+                   <div class="caption left-align">
+                     <h3>Grow like a Pro</h3>
+                     <h5 class="light white-text text-lighten-3">Schedule when to water or why! Never miss a day of feeding.</h5>
+                   </div>
+                 </li>
+                 <li>
+                   <img src="https://www.argentum.org/wp-content/uploads/2019/06/cannabis-plant-1200x760.jpg"> <!-- random image -->
+                   <div class="caption left-align">
+                     <h3>No stress.</h3>
+                     <h5 class="light white-text text-lighten-3">Your crop can be taken care of easily and remotely.</h5>
+                   </div>
+                 </li>
+                 <li>
+                   <img src="https://s3.amazonaws.com/cms.ipressroom.com/175/files/20197/5d5c35ec2cfac2039d88ada9_Cannabis+flower/Cannabis+flower_hero.jpg"> <!-- random image -->
+                   <div class="caption center-align">
+                     <h3>Results!</h3>
+                     <h5 class="light white-text text-lighten-3">Harvesting is the prize!</h5>
+                   </div>
+                 </li>
+               </ul>
+             </div>
+            <p></p>
             <div class="card-action">
               <a href="settings.php">Setup My EarthBOX</a>
             </div>
           </div>
         </div>
       </div>
+
 
       <?php
         }
@@ -323,6 +351,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script type="text/javascript" src="js/javascript_bater.js"></script>
+    <script type="text/javascript" src="js/slidercode.js"></script>
 
     <script src="./js/materialize.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
