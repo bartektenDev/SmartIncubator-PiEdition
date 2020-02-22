@@ -16,8 +16,9 @@ function waitF()
 
 function readIP()
 {
-  document.getElementById("incubatorBoxIPdisplay").innerHTML = window.location.hostname + ":" + window.location.port;
+  document.getElementById("incubatorBoxIPdisplay").innerHTML = "http://" + window.location.hostname;
   waitF();
+  countIncubationDays2();
 }
 
 function openWebcamLiveStream()
@@ -139,6 +140,30 @@ function countIncubationDays()
   }
 }
 
+function countIncubationDays2()
+{
+  var incubationDisplay = document.getElementById('dayZDisplay');
+
+  var date1 = new Date(document.getElementById('startdate').innerHTML);
+  var date2 = new Date(document.getElementById('enddate').innerHTML);
+
+  if(incubationDisplay.innerHTML == ""){
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = mm + '/' + dd + '/' + yyyy;
+
+    date2.value = today;
+
+    var Difference_In_Time = date2.getTime() - date1.getTime();
+    var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+
+    incubationDisplay.innerHTML = Difference_In_Days;
+  }
+}
+
 function dismissAlert()
 {
   var data = new FormData();
@@ -161,6 +186,15 @@ function showStartupTips()  {
   xhr.open( 'post', 'showalertwrite.php', true );
   xhr.send(data);
 }
+
+function changeStartOfIncubationDate()  {
+  var data = new FormData();
+  data.append("data" , "test");
+  var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
+  xhr.open( 'post', 'applynewdate.php', true );
+  xhr.send(data);
+}
+
 
 function activateFan() {
   // var fanStat = document.getElementById("fanStatusText").innerHTML;

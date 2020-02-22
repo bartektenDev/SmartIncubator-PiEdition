@@ -53,7 +53,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
     </form>
     </font>
 
-    <a style="margin-left:60px;">ver 1.0.10</a>
+    <a style="margin-left:60px;">ver 1.0.11</a>
 
     <p>
 
@@ -146,6 +146,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
             </div>
             <div>
               <img src="./images/blankios6calendar.png" align="center" width="30%" style="max-width:60px;"><a style="margin-left:-44px;color:#000;font-size:24px;" id="dayZDisplay"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:#000;font-size:24px;">Days</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <b>
               <a id="startdate" style="text-align:left;color:#000;">
                 <?php
                   $file = fopen("./python_scripts/logs/startDateIncubation.txt","r");
@@ -159,7 +160,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
                 echo $date;
                 ?>
               </a>
-
+              </b>
               <p></p>
 
               <font size="3" color="#000">
@@ -319,7 +320,7 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
       <script type="text/javascript" src="js/materialize.min.js"></script>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script type="text/javascript" src="js/javascript_bater.js"></script>
 
@@ -327,7 +328,6 @@ if ($_POST["txtUsername"] != $username || $_POST['txtPassword'] != $password) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
       <script type="text/javascript" src="js/init.js"></script>
-      <script type="text/javascript" src="js/datepickerc.js"></script>
       <div class="sidenav-overlay"></div>
       <div class="drag-target"></div>
     </body>
