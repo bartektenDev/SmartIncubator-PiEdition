@@ -13,7 +13,8 @@ if ("password" == $password) {
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <link rel="stylesheet" href="./css/animate.css">
-      <link rel="shortcut icon" href="./images/earthbegin.ico" type="image/x-icon"/>
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+      <link rel="icon" href="https://docs.google.com/uc?export=download&id=1XNGPjIfDBdAtnlecVzkS50dP5JgiN4Nz">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <style>
@@ -75,14 +76,31 @@ if ("password" == $password) {
           <div align="center" style="margin:auto;max-width:420px;">
             <div class="card">
               <div class="card-content black-text">
-              <span class="card-title">EarthBOX IP Address</span>
+              <span class="card-title">EarthBOX System Details</span>
               </div>
               <div>
-                <div align="center" class="animated fadeIn delay-1s"><a id="incubatorBoxIPdisplay" style="color:#1ddb4f;font-size:28px;">x.x.x.x</a></div>
+                <div align="center" class="animated fadeIn delay-1s">
+                  <img src="./images/globe.png" width="50px" style="margin-bottom:-15px;" /><a id="incubatorBoxIPdisplay" style="color:#1ddb4f;font-size:28px;">x.x.x.x</a>
+                  <p></p>
+                  <img src="./images/sshtunnel.png" width="50px" style="margin-bottom:-15px;" /><a id="incubatorBoxSshIPdisplay" style="color:#000;font-size:24px;">
+                    SSH Not Enabled
+                  </a>
+                  <p></p>
+                  <span class="card-title">Network info</span>
+                  <p></p>
+                  <a width="80%" id="networkoutput" value="">
+                    <?php
+                      $file = fopen("./python_scripts/logs/sshHostname.txt","r");
+                      echo fgets($file);
+                      fclose($file);
+                    ?>
+                  </a>
+                </div>
               <br></br>
             </div>
           </div>
         </div>
+      </div>
 
         <div class="row">
           <div align="center" style="margin:auto;max-width:420px;">
@@ -141,28 +159,19 @@ if ("password" == $password) {
             </div>
           </div>
         </div>
-      </div>
 
-      <p></p>
-
-
-
-      <p align="center" class="animated fadeIn delay-1s">
         <div class="row">
             <div align="center" style="margin:auto;max-width:420px;">
               <div class="card">
                 <div class="card-content black-text">
                 <span class="card-title">Developed Professionally by:</span>
-                </div>
-                <div>
                   <h3>Bart Tarasewicz</h3>
                   <a href="mailto:barttaro@gmail.com">barttaro@gmail.com</a>
-                <br></br>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </p>
 
       <p></p>
       <p align="center" class="animated fadeIn delay-1s">The best smart device for your plants and greenery,<br> engineered with fine Polish programming.</p>
@@ -170,9 +179,10 @@ if ("password" == $password) {
       <p></p>
 
       <div align="center" class="animated fadeIn delay-1s">
-        ver 1.0.11
+        ver 1.0.12
       </div>
 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript" src="js/javascript_bater.js"></script>

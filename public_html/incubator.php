@@ -20,7 +20,8 @@ if (false) {
       <link rel="stylesheet" href="./css/animate.css">
       <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css"/>
-      <link rel="shortcut icon" href="./images/earthbegin.ico" type="image/x-icon"/>
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+      <link rel="icon" href="https://docs.google.com/uc?export=download&id=1XNGPjIfDBdAtnlecVzkS50dP5JgiN4Nz">
 <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -53,7 +54,7 @@ if (false) {
     </form>
     </font>
 
-    <a style="margin-left:60px;">ver 1.0.11</a>
+    <a style="margin-left:60px;">ver 1.0.12</a>
 
     <p>
 
@@ -131,21 +132,21 @@ if (false) {
                    </div>
                  </li>
                  <li>
-                   <img src="./images/wateringcanna.jpg"> <!-- random image -->
+                   <img src="./images/hidefweed.jpg"> <!-- random image -->
                    <div class="caption left-align">
                      <h3>Grow like a Pro</h3>
                      <h5 class="light white-text text-lighten-3">Schedule when to water or why! Never miss a day of feeding.</h5>
                    </div>
                  </li>
                  <li>
-                   <img src="https://www.argentum.org/wp-content/uploads/2019/06/cannabis-plant-1200x760.jpg"> <!-- random image -->
+                   <img src="./images/growtentweed.jpg"> <!-- random image -->
                    <div class="caption left-align">
                      <h3>No stress.</h3>
                      <h5 class="light white-text text-lighten-3">Your crop can be taken care of easily and remotely.</h5>
                    </div>
                  </li>
                  <li>
-                   <img src="https://s3.amazonaws.com/cms.ipressroom.com/175/files/20197/5d5c35ec2cfac2039d88ada9_Cannabis+flower/Cannabis+flower_hero.jpg"> <!-- random image -->
+                   <img src="./images/cannabistintwallpaper.jpg"> <!-- random image -->
                    <div class="caption center-align">
                      <h3>Results!</h3>
                      <h5 class="light white-text text-lighten-3">Harvesting is the prize!</h5>
@@ -344,6 +345,7 @@ if (false) {
         </form>
       </div> -->
 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="js/materialize.min.js"></script>
 

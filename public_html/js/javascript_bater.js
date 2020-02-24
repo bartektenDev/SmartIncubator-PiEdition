@@ -17,8 +17,9 @@ function waitF()
 function readIP()
 {
   document.getElementById("incubatorBoxIPdisplay").innerHTML = "http://" + window.location.hostname;
+  document.getElementById("incubatorBoxSshIPdisplay").innerHTML = "ssh pi@" + window.location.hostname + " -p 22";
   waitF();
-  countIncubationDays2();
+  countIncubationDays();
 }
 
 function openWebcamLiveStream()
@@ -26,13 +27,10 @@ function openWebcamLiveStream()
   if(window.location.hostname != "127.0.0.1"){
     document.getElementById("webcamLiveStreamDisplay").src = "http://" + window.location.hostname + ":8082"
   }
-
   //readMoistMeter
   readMoistMeter();
-
   //display livestream and if not found notify user!
   checkSRC();
-
   countIncubationDays();
 
 }
@@ -113,34 +111,9 @@ function checkSRC()
   {
     elem.src = "./images/livestreamnotfound.jpg";
   }
-
 }
 
 function countIncubationDays()
-{
-  var incubationDisplay = document.getElementById('dayZDisplay');
-
-  var date1 = new Date(document.getElementById('startdate').innerHTML);
-  var date2 = new Date(document.getElementById('enddate').innerHTML);
-
-  if(incubationDisplay.innerHTML == ""){
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-
-    today = mm + '/' + dd + '/' + yyyy;
-
-    date2.value = today;
-
-    var Difference_In_Time = date2.getTime() - date1.getTime();
-    var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-
-    incubationDisplay.innerHTML = Difference_In_Days;
-  }
-}
-
-function countIncubationDays2()
 {
   var incubationDisplay = document.getElementById('dayZDisplay');
 
