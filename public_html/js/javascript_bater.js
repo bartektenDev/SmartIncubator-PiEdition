@@ -27,10 +27,13 @@ function openWebcamLiveStream()
   if(window.location.hostname != "127.0.0.1"){
     document.getElementById("webcamLiveStreamDisplay").src = "http://" + window.location.hostname + ":8082"
   }
+
   //readMoistMeter
   readMoistMeter();
+
   //display livestream and if not found notify user!
   checkSRC();
+
   countIncubationDays();
 
 }
@@ -111,6 +114,7 @@ function checkSRC()
   {
     elem.src = "./images/livestreamnotfound.jpg";
   }
+
 }
 
 function countIncubationDays()
