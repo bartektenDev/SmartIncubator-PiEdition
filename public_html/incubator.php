@@ -54,7 +54,7 @@ if (false) {
     </form>
     </font>
 
-    <a style="margin-left:60px;">ver 1.0.12</a>
+    <a style="margin-left:60px;">ver 1.0.13</a>
 
     <p>
 
