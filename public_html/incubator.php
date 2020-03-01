@@ -54,7 +54,7 @@ if (false) {
     </form>
     </font>
 
-    <a style="margin-left:60px;">ver 1.0.13</a>
+    <a style="margin-left:60px;">ver 1.0.15</a>
 
     <p>
 
@@ -103,6 +103,41 @@ if (false) {
         </div>
       </nav>
 
+      <div class="row">
+        <div align="center" style="margin:auto;max-width:420px;">
+
+
+      <?php
+        $file = fopen("./python_scripts/logs/dismissPurchaseAlertStatus.txt","r");
+
+        $outputFileData = fgets($file);
+        fclose($file);
+        if($outputFileData == "youreExcusedKat"){
+
+      ?>
+
+      <?php
+        }else{
+      ?>
+      <div class="card">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">Thank you for your purchase!</span>
+            <p>Dear customer, I appreciate your support and your dollars. It will help me
+            pay for college. I hope you use this tool to your advantage and make yourself some
+          of mothernatures most beautiful creations. Enjoy some of lifes best things to offer. -Bart</p>
+          </div>
+          <div class="card-action">
+            <a href="https://www.paypal.me/polbusniess">Help Bart</a>
+            <a onclick="dismissPurchaseAlert();">Close</a>
+          </div>
+        </div>
+      </div>
+
+      <?php
+        }
+      ?>
+
       <?php
         $file = fopen("./python_scripts/logs/dismissAlertStatus.txt","r");
 
@@ -116,68 +151,44 @@ if (false) {
         }else{
       ?>
 
-      <div class="row">
-        <div align="center" style="margin:auto;max-width:420px;">
-
-          <div class="row">
-            <div class="">
-              <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                  <span class="card-title">Thank you for your purchase!</span>
-                  <p>Dear customer, I appreciate your support and your dollars. It will help me
-                  pay for college. I hope you use this tool to your advantage and make yourself some
-                of mothernatures most beautiful creations. Enjoy some of lifes best things to offer. -Bart</p>
-                </div>
-                <div class="card-action">
-                  <a href="https://www.paypal.me/polbusniess">Help Bart</a>
-                  <a onclick="dismissPurchaseAlert();">Close</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <p></p>
-            <a onclick="dismissAlert();" style="margin-left:310px;margin-top:12px;"class="waves-effect waves-red btn-flat">Close</a>
-            <p></p>
-            <div class="slider">
-               <ul class="slides">
-                 <li>
-                   <img src="./images/cannabissprouting.jpg"> <!-- random image -->
-                   <div class="caption center-align">
-                     <h3>EarthBOX Pro</h3>
-                     <h5 class="light white-text text-lighten-3">Welcome newbie!</h5>
-                   </div>
-                 </li>
-                 <li>
-                   <img src="./images/hidefweed.jpg"> <!-- random image -->
-                   <div class="caption left-align">
-                     <h3>Grow like a Pro</h3>
-                     <h5 class="light white-text text-lighten-3">Schedule when to water or why! Never miss a day of feeding.</h5>
-                   </div>
-                 </li>
-                 <li>
-                   <img src="./images/growtentweed.jpg"> <!-- random image -->
-                   <div class="caption left-align">
-                     <h3>No stress.</h3>
-                     <h5 class="light white-text text-lighten-3">Your crop can be taken care of easily and remotely.</h5>
-                   </div>
-                 </li>
-                 <li>
-                   <img src="./images/cannabistintwallpaper.jpg"> <!-- random image -->
-                   <div class="caption center-align">
-                     <h3>Results!</h3>
-                     <h5 class="light white-text text-lighten-3">Harvesting is the prize!</h5>
-                   </div>
-                 </li>
-               </ul>
-             </div>
-            <p></p>
-            <div class="card-action">
-              <a href="settings.php">Setup My EarthBOX</a>
-            </div>
-          </div>
-
+      <div class="card">
+        <a onclick="dismissAlert();" style="margin-left:310px;margin-top:12px;"class="waves-effect waves-red btn-flat">Close</a>
+        <p></p>
+        <div class="slider">
+           <ul class="slides">
+             <li>
+               <img src="./images/cannabissprouting.jpg"> <!-- random image -->
+               <div class="caption center-align">
+                 <h3>EarthBOX Pro</h3>
+                 <h5 class="light white-text text-lighten-3"><b>Welcome newbie!</b></h5>
+               </div>
+             </li>
+             <li>
+               <img src="./images/hidefweed.jpg"> <!-- random image -->
+               <div class="caption left-align">
+                 <h3>Grow like a Pro</h3>
+                 <h5 class="light white-text text-lighten-3"><b>Schedule when to water or why! Never miss a day of feeding.</b></h5>
+               </div>
+             </li>
+             <li>
+               <img src="./images/growtentweed.jpg"> <!-- random image -->
+               <div class="caption left-align">
+                 <h3>No stress.</h3>
+                 <h5 class="light white-text text-lighten-3"><b>Your crop can be taken care of easily and remotely.</b></h5>
+               </div>
+             </li>
+             <li>
+               <img src="./images/cannabistintwallpaper.jpg"> <!-- random image -->
+               <div class="caption center-align">
+                 <h3>Results!</h3>
+                 <h5 class="light white-text text-lighten-3"><b>Harvesting is the prize!</b></h5>
+               </div>
+             </li>
+           </ul>
+         </div>
+        <p></p>
+        <div class="card-action">
+          <a href="settings.php">Setup My EarthBOX</a>
         </div>
       </div>
 
@@ -186,40 +197,135 @@ if (false) {
         }
       ?>
 
-      <div class="row">
-        <div align="center" style="margin:auto;max-width:420px;">
           <div class="card">
             <div class="card-content black-text">
             <span class="card-title">Automated Week Schedule</span>
             </div>
             <div>
-              <a id="day1">Sun.&nbsp;&nbsp;</a>
-              <a id="day2">Mon.&nbsp;&nbsp;</a>
-              <a id="day3">Tues.</a>
-              <a id="day4">&nbsp;Wed.&nbsp;&nbsp;&nbsp;</a>
-              <a id="day5">Thurs.</a>
-              <a id="day6">&nbsp;&nbsp;Fri.&nbsp;&nbsp;</a>
-              <a id="day7">&nbsp;&nbsp;Sat.&nbsp;&nbsp;</a>
-              <p></p>
-              <img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>
-              <img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>
-              <img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>
-              &nbsp;<img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>
-              &nbsp;<img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>
-              <img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>
-              <img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>
-            <p></p>
+              <table width="100%">
+                <tr>
+                  <th>S</th>
+                  <th>M</th>
+                  <th>T</th>
+                  <th>W</th>
+                  <th>T</th>
+                  <th>F</th>
+                  <th>S</th>
+                </tr>
+                <tr>
+                  <td>
+                    <?php
+                      $file = fopen("./python_scripts/logs/dateLogs/sundayTodo.txt","r");
+                      $fileData = fgets($file);
+                      fclose($file);
+
+                      if(strpos($fileData, 'water') !== false){
+                        echo '<img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }else{
+                        echo '<img src="./images/reddot.gif" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }
+                    ?>
+                  </td>
+                  <td>
+                    <?php
+                      $file = fopen("./python_scripts/logs/dateLogs/mondayTodo.txt","r");
+                      $fileData = fgets($file);
+                      fclose($file);
+
+                      if(strpos($fileData, 'water') !== false){
+                        echo '<img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }elseif (strpos($fileData, 'fan') !== false) {
+                        echo '<img src="./images/faniconclean.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }else{
+                        echo '<img src="./images/reddot.gif" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }
+                    ?>
+                  </td>
+                  <td>
+                    <?php
+                      $file = fopen("./python_scripts/logs/dateLogs/tuesdayTodo.txt","r");
+                      $fileData = fgets($file);
+                      fclose($file);
+
+                      if(strpos($fileData, 'water') !== false){
+                        echo '<img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }elseif (strpos($fileData, 'fan') !== false) {
+                        echo '<img src="./images/faniconclean.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }else{
+                        echo '<img src="./images/reddot.gif" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }
+                    ?>
+                  </td>
+                  <td>
+                    <?php
+                      $file = fopen("./python_scripts/logs/dateLogs/wednesdayTodo.txt","r");
+                      $fileData = fgets($file);
+                      fclose($file);
+
+                      if(strpos($fileData, 'water') !== false){
+                        echo '<img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }elseif (strpos($fileData, 'fan') !== false) {
+                        echo '<img src="./images/faniconclean.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }else{
+                        echo '<img src="./images/reddot.gif" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }
+                    ?>
+                  </td>
+                  <td>
+                    <?php
+                      $file = fopen("./python_scripts/logs/dateLogs/thursdayTodo.txt","r");
+                      $fileData = fgets($file);
+                      fclose($file);
+
+                      if(strpos($fileData, 'water') !== false){
+                        echo '<img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }elseif (strpos($fileData, 'fan') !== false) {
+                        echo '<img src="./images/faniconclean.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }else{
+                        echo '<img src="./images/reddot.gif" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }
+                    ?>
+                  </td>
+                  <td>
+                    <?php
+                      $file = fopen("./python_scripts/logs/dateLogs/fridayTodo.txt","r");
+                      $fileData = fgets($file);
+                      fclose($file);
+
+                      if(strpos($fileData, 'water') !== false){
+                        echo '<img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }elseif (strpos($fileData, 'fan') !== false) {
+                        echo '<img src="./images/faniconclean.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }else{
+                        echo '<img src="./images/reddot.gif" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }
+                    ?>
+                  </td>
+                  <td>
+                    <?php
+                      $file = fopen("./python_scripts/logs/dateLogs/saturdayTodo.txt","r");
+                      $fileData = fgets($file);
+                      fclose($file);
+
+                      if(strpos($fileData, 'water') !== false){
+                        echo '<img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }elseif (strpos($fileData, 'fan') !== false) {
+                        echo '<img src="./images/faniconclean.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }else{
+                        echo '<img src="./images/reddot.gif" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>';
+                      }
+                    ?>
+                  </td>
+                </tr>
+              </table>
             <div class="card-action">
               <a href="settings.php">Go to settings</a>
             </div>
           </div>
         </div>
-      </div>
 
       <p></p>
 
-      <div class="row">
-        <div align="center" style="margin:auto;max-width:420px;">
           <div class="card">
             <div class="card-content black-text">
             <span class="card-title">You have been incubating for...</span>
@@ -253,13 +359,9 @@ if (false) {
               <a href="settings.php">Go to settings</a>
             </div>
           </div>
-        </div>
-      </div>
 
       <p></p>
 
-      <div class="row">
-        <div align="center" style="margin:auto;max-width:420px;">
           <div class="card">
             <div class="card-image">
               <img id="webcamLiveStreamDisplay" alt="Live Stream will display here." align="center" style="-webkit-user-select: none;" src="./images/livestreamnotfound.jpg" width="95%"/>
@@ -269,13 +371,9 @@ if (false) {
               <a href="fullscreenStream.html">Fullscreen</a>
             </div>
           </div>
-        </div>
-      </div>
 
       <p></p>
 
-      <div class="row">
-        <div align="center" style="margin:auto;max-width:420px;">
           <div class="card white">
             <div class="card-content black-text">
               <span class="card-title">EarthBOX Details</span>
@@ -372,9 +470,10 @@ if (false) {
               <a class="btn-floating btn-large waves-effect waves-light white" onclick="activateFan();"><img src="./images/fanicon4.png" width="100%" /></a>&nbsp;
               <a class="btn-floating btn-large waves-effect waves-light white"><img src="./images/growlighton.png" width="100%" style="vertical-align: middle;position: absolute;top: 0;bottom: 0;margin: auto;"  /><i class="material-icons">growlight</i></a>&nbsp;-->
               <a class="btn-floating btn-large waves-effect waves-light white" onclick="activateWaterPumpServo();"><img src="./images/waterplanticon6.png" width="100%" /><i class="material-icons">waterplant</i></a>&nbsp;
-              <a class="btn-floating btn-large waves-effect waves-light black" href="reboot.php"><img src="./images/reloadicon.png" width="100%"/><i class="material-icons">reload</i></a>
+              <a class="btn-floating btn-large waves-effect waves-light black" onclick="askReboot();"><img src="./images/reloadicon.png" width="100%"/><i class="material-icons">reload</i></a>
             </div>
           </div>
+          ver 1.0.15
         </div>
       </div>
 

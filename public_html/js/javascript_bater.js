@@ -141,6 +141,21 @@ function countIncubationDays()
   }
 }
 
+function dismissPurchaseAlert()
+{
+  var data = new FormData();
+  data.append("data" , "");
+  var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
+  xhr.open( 'post', 'hidepurchasealertwrite.php', true );
+  xhr.send(data);
+
+  currentURL = window.location.pathname;
+
+  if(currentURL == "/incubator.php" || currentURL == "/s_incubate/public_html/incubator.php"){
+    location.reload();
+  }
+}
+
 function dismissAlert()
 {
   var data = new FormData();
@@ -154,6 +169,14 @@ function dismissAlert()
   if(currentURL == "/incubator.php" || currentURL == "/s_incubate/public_html/incubator.php"){
     location.reload();
   }
+}
+
+function showStartupPurchase()  {
+  var data = new FormData();
+  data.append("data" , "");
+  var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
+  xhr.open( 'post', 'showpurchasealertwrite.php', true );
+  xhr.send(data);
 }
 
 function showStartupTips()  {
@@ -207,6 +230,22 @@ function activateWaterPumpServo() {
   } else {
      //user clicked cancel
      M.toast({html: 'Cancelled Water Pump Activation...'})
+     return false;
+  }
+}
+
+function askReboot() {
+  var retVal = confirm("Activating this button will reboot EarthBOX. Are you sure you want to reboot your EarthBOX? It should automatically come back online after 2 minutes if the page is killed. Just refresh.");
+  if( retVal == true ) {
+     //continue
+     M.toast({html: 'Rebooting...'})
+     var x = new XMLHttpRequest();
+         x.open("GET","reboot.php",true);
+         x.send();
+         return false;
+  } else {
+     //user clicked cancel
+     M.toast({html: 'Cancelled Reboot Activation...'})
      return false;
   }
 }

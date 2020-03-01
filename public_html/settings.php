@@ -113,9 +113,6 @@ if ("password" == $password) {
                     <th>Day</th>
                     <th>Run</th>
                     <th>Time</th>
-                    <col align="left">
-                    <col align="left">
-                    <col align="right">
                 </tr>
               </thead>
 
@@ -134,7 +131,7 @@ if ("password" == $password) {
                 <tr>
                   <td>Monday</td>
                   <td class='dropdown-trigger' href='#' data-target='dropdown2'>💧</td>
-                  <td>
+                  <td class='dropdown-trigger' href='#' data-target='dropdown1'>
                     <?php
                       $file = fopen("./python_scripts/logs/dateLogs/monday.txt","r");
                       echo fgets($file);
@@ -145,7 +142,7 @@ if ("password" == $password) {
                 <tr>
                   <td>Tues.</td>
                   <td class='dropdown-trigger' href='#' data-target='dropdown2'>💧</td>
-                  <td>
+                  <td class='dropdown-trigger' href='#' data-target='dropdown1'>
                     <?php
                       $file = fopen("./python_scripts/logs/dateLogs/tuesday.txt","r");
                       echo fgets($file);
@@ -156,7 +153,7 @@ if ("password" == $password) {
                 <tr>
                   <td>Wed.</td>
                   <td class='dropdown-trigger' href='#' data-target='dropdown2'>💧</td>
-                  <td>
+                  <td class='dropdown-trigger' href='#' data-target='dropdown1'>
                     <?php
                       $file = fopen("./python_scripts/logs/dateLogs/wednesday.txt","r");
                       echo fgets($file);
@@ -167,7 +164,7 @@ if ("password" == $password) {
                 <tr>
                   <td>Thurs.</td>
                   <td class='dropdown-trigger' href='#' data-target='dropdown2'>💧</td>
-                  <td>
+                  <td class='dropdown-trigger' href='#' data-target='dropdown1'>
                     <?php
                       $file = fopen("./python_scripts/logs/dateLogs/thursday.txt","r");
                       echo fgets($file);
@@ -178,7 +175,7 @@ if ("password" == $password) {
                 <tr>
                   <td>Friday</td>
                   <td class='dropdown-trigger' href='#' data-target='dropdown2'>💧</td>
-                  <td>
+                  <td class='dropdown-trigger' href='#' data-target='dropdown1'>
                     <?php
                       $file = fopen("./python_scripts/logs/dateLogs/friday.txt","r");
                       echo fgets($file);
@@ -189,7 +186,7 @@ if ("password" == $password) {
                 <tr>
                   <td>Saturday</td>
                   <td class='dropdown-trigger' href='#' data-target='dropdown2'>💧</td>
-                  <td>
+                  <td class='dropdown-trigger' href='#' data-target='dropdown1'>
                     <?php
                       $file = fopen("./python_scripts/logs/dateLogs/saturday.txt","r");
                       echo fgets($file);
@@ -227,13 +224,8 @@ if ("password" == $password) {
                   <li><a href="#!">12:00 pm</a></li>
                 </ul>
                 <ul id='dropdown2' class='dropdown-content'>
-                  <li><a href="#!">Turn OFF</a></li>
                   <li><a href="#!">💨</a></li>
                   <li><a href="#!">💧</a></li>
-                  <li><a href="#!">💡</a></li>
-                  <li><a href="#!">💨💧</a></li>
-                  <li><a href="#!">💨💡</a></li>
-                  <li><a href="#!">💡💧</a></li>
                 </ul>
               </tbody>
             </table>
@@ -293,6 +285,8 @@ if ("password" == $password) {
               <span class="card-title">Startup Settings</span>
               </div>
               <div>
+                <a class="waves-effect waves-light btn" onclick="showStartupPurchase();">Show Thanks</a>&nbsp;<a class="waves-effect waves-light btn" onclick="dismissPurchaseAlert();">Hide Thanks</a>
+                <p></p>
                 <a class="waves-effect waves-light btn" onclick="showStartupTips();">Show Startup Tips</a>&nbsp;<a class="waves-effect waves-light btn" onclick="dismissAlert();">Hide Startup Tips</a>
               <br></br>
             </div>
@@ -319,7 +313,7 @@ if ("password" == $password) {
       <p></p>
 
       <div align="center" class="animated fadeIn delay-1s">
-        ver 1.0.13
+        ver 1.0.15
       </div>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
