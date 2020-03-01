@@ -118,6 +118,24 @@ if (false) {
 
       <div class="row">
         <div align="center" style="margin:auto;max-width:420px;">
+
+          <div class="row">
+            <div class="">
+              <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Thank you for your purchase!</span>
+                  <p>Dear customer, I appreciate your support and your dollars. It will help me
+                  pay for college. I hope you use this tool to your advantage and make yourself some
+                of mothernatures most beautiful creations. Enjoy some of lifes best things to offer. -Bart</p>
+                </div>
+                <div class="card-action">
+                  <a href="https://www.paypal.me/polbusniess">Help Bart</a>
+                  <a onclick="dismissPurchaseAlert();">Close</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="card">
             <p></p>
             <a onclick="dismissAlert();" style="margin-left:310px;margin-top:12px;"class="waves-effect waves-red btn-flat">Close</a>
@@ -159,6 +177,7 @@ if (false) {
               <a href="settings.php">Setup My EarthBOX</a>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -166,6 +185,38 @@ if (false) {
       <?php
         }
       ?>
+
+      <div class="row">
+        <div align="center" style="margin:auto;max-width:420px;">
+          <div class="card">
+            <div class="card-content black-text">
+            <span class="card-title">Automated Week Schedule</span>
+            </div>
+            <div>
+              <a id="day1">Sun.&nbsp;&nbsp;</a>
+              <a id="day2">Mon.&nbsp;&nbsp;</a>
+              <a id="day3">Tues.</a>
+              <a id="day4">&nbsp;Wed.&nbsp;&nbsp;&nbsp;</a>
+              <a id="day5">Thurs.</a>
+              <a id="day6">&nbsp;&nbsp;Fri.&nbsp;&nbsp;</a>
+              <a id="day7">&nbsp;&nbsp;Sat.&nbsp;&nbsp;</a>
+              <p></p>
+              <img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>
+              <img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>
+              <img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>
+              &nbsp;<img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>
+              &nbsp;<img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>
+              <img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>
+              <img src="./images/fedwatericon.png" align="center" width="42px" style="max-width:42px;"><a style="color:#000;font-size:24px;" id=""/></a>
+            <p></p>
+            <div class="card-action">
+              <a href="settings.php">Go to settings</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p></p>
 
       <div class="row">
         <div align="center" style="margin:auto;max-width:420px;">

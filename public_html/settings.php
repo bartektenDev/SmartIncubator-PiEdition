@@ -102,19 +102,145 @@ if ("password" == $password) {
         </div>
       </div>
 
-        <div class="row">
-          <div align="center" style="margin:auto;max-width:420px;">
-            <div class="card">
-              <div class="card-content black-text">
-              <span class="card-title">Startup Settings</span>
-              </div>
-              <div>
-                <a class="waves-effect waves-light btn" onclick="showStartupTips();">Show Startup Tips</a>&nbsp;<a class="waves-effect waves-light btn" onclick="dismissAlert();">Hide Startup Tips</a>
-              <br></br>
-            </div>
+      <div class="row">
+        <div align="center" style="margin:auto;max-width:420px;">
+          <div class="card">
+            <div class="card-content black-text">
+            <span class="card-title">Automated Week Schedule</span>
+            <table>
+              <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Run</th>
+                    <th>Time</th>
+                    <col align="left">
+                    <col align="left">
+                    <col align="right">
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Sunday</td>
+                  <td class='dropdown-trigger' href='#' data-target='dropdown2'>💧</td>
+                  <td class='dropdown-trigger' href='#' data-target='dropdown1'>
+                    <?php
+                      $file = fopen("./python_scripts/logs/dateLogs/sunday.txt","r");
+                      echo fgets($file);
+                      fclose($file);
+                    ?>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Monday</td>
+                  <td class='dropdown-trigger' href='#' data-target='dropdown2'>💧</td>
+                  <td>
+                    <?php
+                      $file = fopen("./python_scripts/logs/dateLogs/monday.txt","r");
+                      echo fgets($file);
+                      fclose($file);
+                    ?>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tues.</td>
+                  <td class='dropdown-trigger' href='#' data-target='dropdown2'>💧</td>
+                  <td>
+                    <?php
+                      $file = fopen("./python_scripts/logs/dateLogs/tuesday.txt","r");
+                      echo fgets($file);
+                      fclose($file);
+                    ?>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Wed.</td>
+                  <td class='dropdown-trigger' href='#' data-target='dropdown2'>💧</td>
+                  <td>
+                    <?php
+                      $file = fopen("./python_scripts/logs/dateLogs/wednesday.txt","r");
+                      echo fgets($file);
+                      fclose($file);
+                    ?>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Thurs.</td>
+                  <td class='dropdown-trigger' href='#' data-target='dropdown2'>💧</td>
+                  <td>
+                    <?php
+                      $file = fopen("./python_scripts/logs/dateLogs/thursday.txt","r");
+                      echo fgets($file);
+                      fclose($file);
+                    ?>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Friday</td>
+                  <td class='dropdown-trigger' href='#' data-target='dropdown2'>💧</td>
+                  <td>
+                    <?php
+                      $file = fopen("./python_scripts/logs/dateLogs/friday.txt","r");
+                      echo fgets($file);
+                      fclose($file);
+                    ?>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Saturday</td>
+                  <td class='dropdown-trigger' href='#' data-target='dropdown2'>💧</td>
+                  <td>
+                    <?php
+                      $file = fopen("./python_scripts/logs/dateLogs/saturday.txt","r");
+                      echo fgets($file);
+                      fclose($file);
+                    ?>
+                  </td>
+                </tr>
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content'>
+                  <li><a href="#!">Turn OFF</a></li>
+                  <li><a href="#!">12:00 am</a></li>
+                  <li><a href="#!">1:00 am</a></li>
+                  <li><a href="#!">2:00 am</a></li>
+                  <li><a href="#!">3:00 am</a></li>
+                  <li><a href="#!">4:00 am</a></li>
+                  <li><a href="#!">5:00 am</a></li>
+                  <li><a href="#!">6:00 am</a></li>
+                  <li><a href="#!">7:00 am</a></li>
+                  <li><a href="#!">8:00 am</a></li>
+                  <li><a href="#!">9:00 am</a></li>
+                  <li><a href="#!">10:00 am</a></li>
+                  <li><a href="#!">11:00 am</a></li>
+                  <li><a href="#!">12:00 pm</a></li>
+                  <li><a href="#!">1:00 pm</a></li>
+                  <li><a href="#!">2:00 pm</a></li>
+                  <li><a href="#!">3:00 pm</a></li>
+                  <li><a href="#!">4:00 pm</a></li>
+                  <li><a href="#!">5:00 pm</a></li>
+                  <li><a href="#!">6:00 pm</a></li>
+                  <li><a href="#!">7:00 pm</a></li>
+                  <li><a href="#!">8:00 pm</a></li>
+                  <li><a href="#!">9:00 pm</a></li>
+                  <li><a href="#!">10:00 pm</a></li>
+                  <li><a href="#!">11:00 pm</a></li>
+                  <li><a href="#!">12:00 pm</a></li>
+                </ul>
+                <ul id='dropdown2' class='dropdown-content'>
+                  <li><a href="#!">Turn OFF</a></li>
+                  <li><a href="#!">💨</a></li>
+                  <li><a href="#!">💧</a></li>
+                  <li><a href="#!">💡</a></li>
+                  <li><a href="#!">💨💧</a></li>
+                  <li><a href="#!">💨💡</a></li>
+                  <li><a href="#!">💡💧</a></li>
+                </ul>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
+    </div>
 
         <p></p>
 
@@ -159,6 +285,20 @@ if ("password" == $password) {
             </div>
           </div>
         </div>
+
+        <div class="row">
+          <div align="center" style="margin:auto;max-width:420px;">
+            <div class="card">
+              <div class="card-content black-text">
+              <span class="card-title">Startup Settings</span>
+              </div>
+              <div>
+                <a class="waves-effect waves-light btn" onclick="showStartupTips();">Show Startup Tips</a>&nbsp;<a class="waves-effect waves-light btn" onclick="dismissAlert();">Hide Startup Tips</a>
+              <br></br>
+            </div>
+          </div>
+        </div>
+      </div>
 
         <div class="row">
             <div align="center" style="margin:auto;max-width:420px;">
